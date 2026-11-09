@@ -1,0 +1,121 @@
+task_group,task_type,cluster,cluster_id,second_pass,prompts,papers
+Requirements engineering,Requirements engineering,Requirements elicitation and extraction,28,0,50,44
+Requirements engineering,Requirements engineering,Requirements and entity classification,78,0,23,16
+Requirements engineering,Requirements engineering,Constraint and design-requirement generation,26,0,31,21
+Requirements engineering,Requirements engineering,Safety hazard analysis,99,0,9,5
+Software design,Software design and modelling,UML and domain modelling,24,0,58,35
+Software design,Software design and modelling,Software architecture and design decisions,41,0,41,22
+Software design,Software design and modelling,Model transformation and metamodels,58,0,21,9
+Software development,Code generation,General code generation,91,0,35,27
+Software development,Code generation,Code completion and editing assistance,89,0,48,36
+Software development,Code generation,"Code edit formats (search/replace, infill)",55,0,26,24
+Software development,Code generation,Programming problem solving,2,0,373,154
+Software development,Code generation,Code generation from problem specifications,7,0,171,118
+Software development,Code generation,C/C++ programs and competitive programming,44,0,35,27
+Software development,Code generation,Algorithm exercises and problem design,90,0,36,20
+Software development,Code generation,Coding agents and multi-file project generation,45,0,36,27
+Software development,Code generation,Web front-end generation,35,0,56,35
+Software development,Code generation,GPU kernels and HPC code,14,0,91,34
+Software development,Code generation,Hardware design (Verilog/RTL),34,0,52,16
+Software development,Code generation,Smart contracts (Solidity),54,0,23,12
+Software development,Code generation,"Simulation, plotting and G-code",12,0,107,33
+Software development,Code generation,Scene and spatial layout generation,64,0,6,5
+Software development,Code generation,Text-to-SQL and databases,40,0,42,24
+Software development,Code generation,Data analysis with pandas and CSV,63,0,15,12
+Software development,Code generation,Spreadsheet manipulation code,10003,1,6,4
+Software development,Code generation,Function-body completion in repositories,10006,1,20,10
+Software development,Code generation,Chart and visualisation code,10009,1,12,6
+Software development,Code generation,Project-level implementation,10048,1,42,27
+Software development,Code generation,Code for updated APIs,10061,1,20,9
+Software development,Code generation,Heuristic optimisation algorithms,10079,1,11,5
+Software development,Code generation,Code from pseudocode,10080,1,18,14
+Software development,Code generation,Tool-calling code for CAD scripting,11002,1,9,2
+Software development,Code generation,Game generation,11003,1,10,4
+Software development,Code generation,Instruction-based code editing,11009,1,6,5
+Software development,Code generation,Algorithm classes under time budgets,11013,1,5,4
+Software development,Code translation and migration,Code translation and migration,10,0,107,63
+Software development,Code understanding and analysis,Code summarization and explanation,16,0,90,68
+Software development,Code understanding and analysis,Code similarity and equivalence,27,0,57,48
+Software development,Code understanding and analysis,Code execution reasoning (output prediction),36,0,57,23
+Software development,Code understanding and analysis,Code authorship and style analysis,52,0,20,4
+Software development,Code understanding and analysis,Code origin detection (human vs. AI),73,0,5,1
+Software development,Code understanding and analysis,Function-call and call-graph questions,82,0,9,5
+Software quality assurance,Testing,Unit test generation,1,0,353,211
+Software quality assurance,Testing,Issue reproduction tests,19,0,48,30
+Software quality assurance,Testing,Bug injection and mutation,66,0,36,24
+Software quality assurance,Testing,GUI agents and UI testing,17,0,148,77
+Software quality assurance,Testing,Autonomous-driving testing,71,0,25,14
+Software quality assurance,Testing,Chaos engineering,10001,1,16,4
+Software quality assurance,Testing,Failure-inducing test inputs,10087,1,24,13
+Software quality assurance,Testing,Test-suite growth for coverage and mutants,11014,1,5,4
+Software quality assurance,Security and binary analysis,Vulnerability detection and security,0,0,352,201
+Software quality assurance,Security and binary analysis,Memory-safety analysis (C/C++),68,0,18,6
+Software quality assurance,Security and binary analysis,Secure code generation and vulnerability repair,92,0,84,54
+Software quality assurance,Security and binary analysis,Proof-of-concept exploits,98,0,16,13
+Software quality assurance,Security and binary analysis,"Red teaming, CTFs and exploitation",93,0,43,28
+Software quality assurance,Security and binary analysis,Malware detection,95,0,42,22
+Software quality assurance,Security and binary analysis,Binary analysis and decompilation,59,0,33,20
+Software quality assurance,Security and binary analysis,Binary function similarity,80,0,7,4
+Software quality assurance,Security and binary analysis,Deobfuscation,101,0,9,7
+Software quality assurance,Security and binary analysis,Cryptography and authentication code,96,0,23,18
+Software quality assurance,Security and binary analysis,CVE and CWE mapping,102,0,8,4
+Software quality assurance,Security and binary analysis,Security knowledge extraction,103,0,7,7
+Software quality assurance,Formal specification and verification,"Formal specification (TLA+, SMT)",61,0,20,12
+Software quality assurance,Formal specification and verification,C program specification (ACSL) and analysis summaries,23,0,26,15
+Software quality assurance,Formal specification and verification,"Loop invariants and verification contracts (JML, Verus)",65,0,37,17
+Software quality assurance,Formal specification and verification,"Theorem proving (Lean, Rocq)",48,0,43,19
+Software quality assurance,Formal specification and verification,Pre- and postconditions,10017,1,31,14
+Software quality assurance,Formal specification and verification,JML annotation and invariants,10018,1,15,10
+Software quality assurance,Formal specification and verification,Dafny and Verus proofs,11004,1,6,3
+Software quality assurance,Formal specification and verification,"Specification repair (JML, TLA+)",11018,1,9,4
+Software maintenance,"Debugging, fault localization and repair",Program repair,4,0,338,229
+Software maintenance,"Debugging, fault localization and repair",Fault and issue localization,30,0,59,39
+Software maintenance,"Debugging, fault localization and repair",Root-cause analysis and incident response,29,0,55,40
+Software maintenance,"Debugging, fault localization and repair",CI repair problem mining,10008,1,9,2
+Software maintenance,"Debugging, fault localization and repair",Bug detection,10089,1,26,15
+Software maintenance,"Debugging, fault localization and repair",Fault localization in code,10090,1,24,15
+Software maintenance,"Debugging, fault localization and repair",Crash and stack-trace debugging,10091,1,17,13
+Software maintenance,"Debugging, fault localization and repair",Issue repair with search/replace edits,11000,1,12,8
+Software maintenance,"Debugging, fault localization and repair",Fixing code from failing tests,11006,1,14,13
+Software maintenance,"Debugging, fault localization and repair",Issue reports and fixes,11008,1,7,3
+Software maintenance,"Debugging, fault localization and repair",Service anomaly analysis,11015,1,5,2
+Software maintenance,"Code review, refactoring and optimization",Code review and patch assessment,8,0,103,62
+Software maintenance,"Code review, refactoring and optimization",Refactoring and readability,21,0,67,46
+Software maintenance,"Code review, refactoring and optimization",Code performance optimization,11,0,103,64
+Software maintenance,"Code review, refactoring and optimization",Commit messages and code changes,50,0,37,20
+Software maintenance,"Code review, refactoring and optimization",Code smell detection,10005,1,14,10
+Software management,"Environment setup, builds and shell",Environment setup and builds,18,0,66,38
+Software management,"Environment setup, builds and shell",Shell commands and terminal agents,33,0,66,33
+Software management,"Environment setup, builds and shell",Fixing installation errors,10073,1,12,7
+LLM-centric tasks,LLM as evaluator,LLM-as-judge evaluation and scoring,5,0,280,193
+LLM-centric tasks,LLM as evaluator,Ranking and prioritisation,62,0,19,18
+LLM-centric tasks,LLM as evaluator,Agent trajectory analysis and verification,6,0,205,134
+LLM-centric tasks,LLM as evaluator,Scoring rubrics and checklists,10037,1,48,32
+LLM-centric tasks,LLM as evaluator,Tool-use and answer validity judges,10041,1,12,11
+LLM-centric tasks,LLM as evaluator,Pairwise code judges,10042,1,15,7
+LLM-centric tasks,LLM as evaluator,Plan evaluation,11024,1,12,5
+LLM-centric tasks,LLM as agent,Tool use and function calling,9,0,92,56
+LLM-centric tasks,LLM as agent,Task planning and decomposition,31,0,43,35
+LLM-centric tasks,LLM as agent,API request generation,88,0,8,6
+LLM-centric tasks,LLM as agent,Agent planning and task decomposition,10060,1,32,23
+LLM-centric tasks,LLM as agent,Workflow-graph building agents,11023,1,6,4
+LLM-centric tasks,"Data synthesis, extraction and annotation",Prompt templates and data synthesis,49,0,12,11
+LLM-centric tasks,"Data synthesis, extraction and annotation",Feature and scenario synthesis for benchmarks,86,0,6,5
+LLM-centric tasks,"Data synthesis, extraction and annotation",Document QA and information extraction,15,0,105,40
+LLM-centric tasks,"Data synthesis, extraction and annotation",Classification and taxonomy labelling,22,0,60,47
+LLM-centric tasks,"Data synthesis, extraction and annotation",JSON schemas and structured output,13,0,84,59
+LLM-centric tasks,"Data synthesis, extraction and annotation",Reasoning and answer-format instructions,51,0,17,12
+LLM-centric tasks,"Data synthesis, extraction and annotation",Prompt and instruction change analysis,53,0,24,10
+LLM-centric tasks,"Data synthesis, extraction and annotation",Sentiment and emotion labelling,10000,1,19,14
+LLM-centric tasks,"Data synthesis, extraction and annotation",Question-answer pair generation,10044,1,13,6
+LLM-centric tasks,"Data synthesis, extraction and annotation",Multiple-choice question generation,10045,1,11,6
+LLM-centric tasks,"Data synthesis, extraction and annotation",Multi-hop question answering,10050,1,15,10
+LLM-centric tasks,LLM safety and privacy,Alignment and compliance tests,97,0,12,4
+LLM-centric tasks,LLM safety and privacy,Harmful-behaviour judging of agents,94,0,48,29
+LLM-centric tasks,LLM safety and privacy,Privacy-preserving query rewriting,100,0,11,4
+LLM-centric tasks,LLM safety and privacy,Refusal and compliance classification,10016,1,12,7
+Other,Other tasks,Research assistance and qualitative analysis,56,0,23,17
+Other,Other tasks,Programming education and feedback,57,0,28,18
+Other,Other tasks,Operations-research modelling,70,0,14,5
+Other,Other tasks,Design-parameter optimization agents,69,0,12,4
+Other,Other tasks,Image analysis and visual QA,37,0,21,11

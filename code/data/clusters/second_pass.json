@@ -1,0 +1,119 @@
+{
+ "source": "Second pass over the unassigned prompts, 2026-11-09: settings and splits chosen in three rounds of inspection and blind checks (scratchpad second_pass*.py); groups kept when their prompts share one task type.",
+ "ops": [
+  {
+   "split": 81
+  },
+  {
+   "split": 26
+  },
+  {
+   "split": 66
+  },
+  {
+   "split": 54
+  },
+  {
+   "split": 17
+  },
+  {
+   "split": 41
+  },
+  {
+   "split": 88
+  },
+  {
+   "split": 89
+  },
+  {
+   "split": 43
+  },
+  {
+   "split": 61
+  },
+  {
+   "split": 64
+  },
+  {
+   "split": 70
+  },
+  {
+   "split": 77
+  },
+  {
+   "split": 79
+  },
+  {
+   "split": 85
+  },
+  {
+   "split": 2
+  },
+  {
+   "split": 3
+  },
+  {
+   "split": 8
+  },
+  {
+   "split": 19
+  },
+  {
+   "split": 36
+  },
+  {
+   "split": 45
+  },
+  {
+   "split": 1
+  },
+  {
+   "split": 60,
+   "k": 3
+  },
+  {
+   "split": 41
+  }
+ ],
+ "groups": {
+  "0": "Sentiment and emotion labelling",
+  "1": "Chaos engineering",
+  "3": "Spreadsheet manipulation code",
+  "5": "Code smell detection",
+  "6": "Function-body completion in repositories",
+  "8": "CI repair problem mining",
+  "9": "Chart and visualisation code",
+  "16": "Refusal and compliance classification",
+  "17": "Pre- and postconditions",
+  "18": "JML annotation and invariants",
+  "37": "Scoring rubrics and checklists",
+  "41": "Tool-use and answer validity judges",
+  "42": "Pairwise code judges",
+  "44": "Question-answer pair generation",
+  "45": "Multiple-choice question generation",
+  "48": "Project-level implementation",
+  "50": "Multi-hop question answering",
+  "60": "Agent planning and task decomposition",
+  "61": "Code for updated APIs",
+  "73": "Fixing installation errors",
+  "79": "Heuristic optimisation algorithms",
+  "80": "Code from pseudocode",
+  "87": "Failure-inducing test inputs",
+  "89": "Bug detection",
+  "90": "Fault localization in code",
+  "91": "Crash and stack-trace debugging",
+  "1000": "Issue repair with search/replace edits",
+  "1002": "Tool-calling code for CAD scripting",
+  "1003": "Game generation",
+  "1004": "Dafny and Verus proofs",
+  "1006": "Fixing code from failing tests",
+  "1008": "Issue reports and fixes",
+  "1009": "Instruction-based code editing",
+  "1013": "Algorithm classes under time budgets",
+  "1014": "Test-suite growth for coverage and mutants",
+  "1015": "Service anomaly analysis",
+  "1018": "Specification repair (JML, TLA+)",
+  "1023": "Workflow-graph building agents",
+  "1024": "Plan evaluation"
+ }
+}

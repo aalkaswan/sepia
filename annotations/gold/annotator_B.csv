@@ -1,0 +1,733 @@
+paper_id,has_prompts,prompt,where,form,locator,first_words,notes
+2301.06437,0,,,,,,
+2302.03651,0,,,,,,
+2305.05379,0,,,,,,
+2305.14591,1,0,figure,text,,"You are given an integer array
+ranks representing the ranks of some
+mechanics. ranks[I] is the rank of the
+ith mechanic. A mechanic with a rank r
+can repair n cars in r * n^2 minutes.
+You are also given an integer cars
+representing the total number of cars
+waiting in the garage to be repaired.
+Return the minimum time taken to
+repair all the cars.",
+2305.14591,1,1,figure,text,,"Implement a function incr_list(l: list) that returns the input list with
+elements increased by 1.",
+2305.14591,1,2,figure,text,,"Please solve this problem with a brute-force algorithm. After generating the code,
+please test it against the example cases given only, do not generate your own test
+cases.When comparing outputs, please do not consider the line breaks and spaces.
+You are given an integer array ranks representing the ranks of some mechanics. ranks[I]
+is the rank of the ith mechanic. A mechanic with a rank r can repair n cars in r * n^2
+minutes.",
+2305.14591,1,3,appendix,text,,"You are given an integer array
+ranks representing the ranks of some
+mechanics. ranks[I] is the rank of the
+ith mechanic. A mechanic with a rank r
+can repair n cars in r * n^2 minutes.
+You are also given an integer cars
+representing the total number of cars
+waiting in the garage to be repaired.
+Return the minimum time taken to
+repair all the cars.",
+2305.14591,1,4,appendix,text,,"Solve the following problem with python and test it against the example cases only.
+You are given an integer array ranks representing the ranks of some mechanics.
+ranks[I] is the rank of the ith mechanic. A mechanic with a rank r can repair n
+cars in r * n^2 minutes. Mechanics work in parallel.
+You are also given an integer cars representing the total number of cars waiting
+in the garage to be repaired.
+Return the minimum time taken to repair all the cars.
+Examples: (omitted)
+Constraints: (omitted)",
+2305.14591,1,5,appendix,text,,"Please solve this problem with the binary search method.
+After generating the code, please test it against the example cases given in the
+definition. Only use the example cases, don't use your own test cases.
+You are given an integer array ranks representing the ranks of some mechanics.
+ranks[I] is the rank of the ith mechanic. A mechanic with a rank r can repair n
+cars in r * n^2 minutes. Mechanics work in parallel.
+You are also given an integer cars representing the total number of cars waiting
+in the garage to be repaired.
+Return the minimum time taken to repair all the cars.
+Examples: (omitted)
+Constraints: (omitted)
+**Function definition**",
+2305.14591,1,6,appendix,text,,"Please solve this problem with a brute-force algorithm. After generating the code,
+please test it against the example cases given only, do not generate your own test
+cases.When comparing outputs, please do not consider the line breaks and spaces.
+You are given an integer array ranks representing the ranks of some mechanics. ranks[I]
+is the rank of the ith mechanic. A mechanic with a rank r can repair n cars in r * n^2
+minutes.
+You are also given an integer cars representing the total number of cars waiting in the
+garage to be repaired.
+Return the minimum time taken to repair all the cars.",
+2305.14591,1,7,appendix,text,,"You are given this leetcode problem. Please help me by generating a validator function
+`is_valid_input` that takes exactly the same inputs as the solution function and returns
+a boolean value indicating whether the input is valid and follows the constraints
+defined in the problem description. Please test your data validator by checking the
+validity of the example cases given in the problem description.",
+2305.14591,1,8,appendix,text,,"You are given this leetcode problem and its test input validator `is_valid_input`.
+Please help me by generating an input generator function `gen_input` that randomly
+generates test inputs which follow the constraints defined. Your `gen_input` function
+should make use of `is_valid_input` by validating the generated input with it. Your
+function should only generate test inputs and not test outputs.",
+2305.14591,1,9,appendix,text,,"You are given this leetcode problem, its random input generator `gen_input`. Please help
+me by generating 5 random inputs with the random input generator `gen_input`. You should
+return a function named `random_test()` that takes several arguments to control the
+upper limit of the input and returns a list of 5 tuples. You do not need to generate
+test outputs, only generate inputs.",
+2305.14591,1,10,appendix,text,,"Please solve this problem with a brute-force algorithm. After generating the code,
+please test it against the example cases given only, do not generate your own test
+cases.When comparing outputs, please do not consider the line breaks and spaces.
+Andi and Budi were given an assignment to tidy up their bookshelf of n books.
+Each book is represented by the book title — a string si numbered from 1 to n,
+each with length m. Andi really wants to sort the book lexicographically
+ascending, while Budi wants to sort it lexicographically descending.
+(https://codeforces.com/problemset/problem/1575/A, remaining part omitted)",
+2305.14591,1,11,appendix,text,,"You are given this problem.
+Andi and Budi were given an assignment to tidy up their bookshelf of n books.
+Each book is represented by the book title — a string si numbered from 1 to n,
+each with length m. Andi really wants to sort the book lexicographically
+ascending, while Budi wants to sort it lexicographically descending.
+(https://codeforces.com/problemset/problem/1575/A, remaining part omitted)",
+2305.18608,0,,,,,,
+2306.11673,0,,,,,,
+2306.15591,0,,,,,,
+2307.08421,0,,,,,,
+2307.15383,0,,,,,,
+2308.12773,0,,,,,,
+2308.16464,0,,,,,,
+2310.06530,1,0,figure,text,,,
+2310.06530,1,1,figure,text,,,
+2310.06530,1,2,figure,text,,,
+2310.06530,1,3,figure,text,,,
+2310.06530,1,4,figure,text,,,
+2310.06530,1,5,figure,text,,,
+2310.06530,1,6,figure,text,,,
+2310.20078,0,,,,,,
+2311.07989,0,,,,,,
+2312.00582,0,,,,,,
+2312.08189,0,,,,,,"the image says prompting chat, but the prompt is not really presented "
+2402.05256,0,,,,,,
+2404.00971,1,0,figure,text,,,
+2404.00971,1,1,figure,text,,,
+2404.00971,1,2,figure,text,,,
+2404.00971,1,3,figure,text,,,
+2404.04821,0,,,,,,
+2405.00565,0,,,,,,
+2405.03067,0,,,,,,
+2405.13604,0,,,,,,
+2406.04349,0,,,,,,
+2406.11046,0,,,,,,
+2407.04250,0,,,,,,
+2407.06759,0,,,,,,
+2407.12605,0,,,,,,
+2407.13291,0,,,,,,
+2408.11060,1,0,main,text,,You are a programmer. You should use the preexisting code in the file DynamicTextEditor.py and create the requested functions so the code operates without error. Pay attention to the imports in DynamicTextEditor and choose code that works within those imports,
+2408.11060,1,1,main,text,,"Create a single function named onOpenDynamic. It takes one argument, self. The function uses a file dialog to let the user select and open a file. The file is then placed in the Text object in the initUI() function in for editing. Include inside the function any necessary imports to make the code run",
+2408.15411,1,0,listing,text,,"Given the
+following code snippet: {CODE SNIPPET}. Generate inline
+comments to explain what each part of the code does. An
+inline comment is a single-line comment typically used to
+explain or clarify a specific line of code. It starts with
+// for Java and # for Python. Ensure that you only add
+inline comments and do not alter the existing code. Avoid
+adding any comments at the class or method level; focus
+only on inline comments",
+2408.15411,1,1,listing,text,,"Extract the main context and key points from
+the following question description of SO:
+{QUESTION DESCRIPTION}. This will help understand
+the purpose and requirements of the code provided
+in the answers.",
+2408.15411,1,2,listing,text,,"Generate inline comments for the following
+code snippet: {CODE SNIPPET}, considering the provided
+question context: {CODE CONTEXT}. An inline comment is a
+single-line comment typically used to explain or clarify
+a specific line of code. It starts with // for Java
+and # for Python. Ensure that you only generate inline
+comments and do not alter the existing code. Avoid adding
+any comments at the class or method level; focus only on
+inline comments.",
+2409.12269,0,,,,,,
+2409.12714,0,,,,,,
+2409.19922,1,0,figure,text,,,
+2409.19922,1,1,figure,text,,,
+2409.19922,1,2,figure,text,,,
+2409.19922,1,3,figure,text,,,
+2410.04485,1,0,appendix,text,,"You need to fix the issue:
+<ISSUE_DESCRIPTION>
+You are professional Python programmer. You are asked to fix code. Write the answer ONLY in the following format:
+<replace>
+{fixed python code}
+</replace>,
+where the code after <replace> should be the code which was already rewritten.
+Fix the following code, insert fixed code of the full function, do not shorten it.
+<FUNCTION_TO_FIX>",
+2410.04485,1,1,appendix,text,,"Your code has errors, make reasoning then fix function using <replace></replace> tags. Replace function which was sent to you.
+You need to change only provided function, you must not add new functions or new classes.
+<FAILURE LOG>",
+2410.04485,1,2,appendix,text,,"Error: Failed to create or apply patch. Use <replace></replace> tags. Rewrite what you fixed in the last iteration using the required
+format. Replace function which was sent to you. You need to change only provided function, you must not add new functions or
+new classes!",
+2410.22159,1,0,figure,text,,,
+2410.22159,1,1,figure,text,,,
+2411.10213,0,0,main,text,,,in replication package only 
+2411.11401,1,0,main,text,,,
+2411.11401,1,1,main,text,,,
+2412.11304,0,,,,,,
+2501.01329,1,0,figure,text,,,
+2501.01329,1,1,figure,text,,,
+2501.01329,1,2,figure,text,,,
+2501.01329,1,3,figure,text,,,
+2501.01329,1,4,figure,text,,,
+2501.01329,1,5,figure,text,,,
+2501.01329,1,6,figure,text,,,
+2501.01329,1,7,figure,text,,,
+2501.01329,1,8,figure,text,,,
+2501.01329,1,9,figure,text,,,
+2501.01329,1,10,figure,text,,,
+2501.01329,1,11,figure,text,,,
+2501.01329,1,12,figure,text,,,
+2501.01329,1,13,figure,text,,,
+2501.01329,1,14,figure,text,,,
+2501.01329,1,15,figure,text,,,
+2501.01329,1,16,figure,text,,,
+2501.04811,0,,,,,,
+2501.09191,0,,,,,,
+2502.08806,1,0,figure,text,,"Create a unit test:
+1) method signature:
+test_iter(self, env)
+2) code coverage of:
+a. Line 84 ~ 91 [code omitted]
+from parser.py;
+b. Line 50 ~ 61 from lexer.py.",
+2502.08806,1,1,figure,text,,"Right after the above code block, you need to predict and fill in the blank
+in the following assertion statement:
+‘‘‘python { cloze question with blank } ‘‘‘
+Use the context and the provided prefix in the unit test method to infer the
+missing part of the assertion.",
+2502.08806,1,2,figure,text,,"Here is the checklist:
+The generated test code should contain ALL of the following calls:
+- {target name}, a Python {type} defined in file {file name}.",
+2502.08806,1,3,figure,text,,"## Coverage Requirement
+Please ensure that the following lines of code from the specified files are
+included and tested. Complete code snippets have already been provided
+earlier. When referring to coverage, it pertains to pytest coverage. If your
+code calls a function or method that indirectly utilizes the specified lines,
+this will also be considered as covering those lines.
+### {block.file path}
+‘‘‘python { block.code snippet } ‘‘‘
+This includes {block.line count} lines from line numbers
+{block.start line number} to { block.end line number }.
+[more code blocks if available]
+## Summary
+In summary, there are {num files} files and {num code} code segments
+that need to be covered. Please make an effort to enhance the coverage of
+these lines, either directly or indirectly, to ensure thorough testing with
+pytest.",
+2502.08806,1,4,appendix,text,,"Task Overview
+You need to complete the assertion in the provided unit test method by considering the context from the corresponding
+Python file.
+Context Information
+Below is the file context, which includes necessary imports and setups for the unittest:
+{{ context }}",
+2502.08806,1,5,appendix,text,,"Task Overview
+You need to complete the assertion in the provided unit test method by considering the context from the corresponding
+Python file.
+Retrieved Code Snippets for Reference
+Here are a few code snippets retrieved for your reference while making your prediction:
+{{ retrieved_snippet }}",
+2502.08806,1,6,appendix,text,,"Task Overview
+Create a unit test based on the provided method signature and given context. All necessary imports for the test have been included, so focus solely on writing the unit
+test method. No additional libraries can be imported.",
+2502.08806,1,7,appendix,text,,"Task Overview
+Create a unit test based on the provided method signature and given context. All necessary imports for the test have been included,
+so focus solely on writing the unit test method. No additional libraries can be imported.
+Retrieved Code Snippets for Reference
+Several code snippets have been provided for your reference:
+{{ retrieved_snippet }}
+Output Format
+When completing a code snippet, the output should include the entire code context provided, including any imports, class
+definitions, or function signatures. Replace placeholders with meaningful code that fits the context. Example:",
+2503.02497,1,0,main,text,,"Write a PennyLane program that implements a
+Variational Quantum Eigensolver to estimate the
+ground-state energy of the H2 molecule using the
+default.qubit device. Define the molecular Hamiltonian, construct a parameterized ansatz circuit, and optimize its parameters using gradient-based
+optimization until convergence",
+2503.07693,1,0,figure,text,,"Given an integer x, return ""Fizz""
+if x is divisible by 3, ""Buzz"" if x
+is divisible by 5, ""FizzBuzz"" if x
+is divisible by 3 and 5, and a
+string version of x if none of
+the above hold.",
+2503.07693,1,1,main,text,,"You are an experienced software developer.
+You write concise code in {language}.
+The code must read input from user and return output corresponding to the task description.",
+2503.07693,1,2,main,text,,"Solve the following code contest problem: {problem_name}.
+Problem description: {problem_description}.
+{program_template}
+Only complete the code, do not add triple quotes, do not give explanations.",
+2503.07693,1,3,main,text,,"I’m trying to solve the following code contest problem: {problem_name}.
+Problem description: {problem_description}.
+Currently, the code is
+```
+{program_candidate}
+```
+The issue is
+{stderr} or ""it must return {expected_output} for input {input},
+but it returns {output}"".
+Describe how I should fix the code in a very concise manner.",
+2503.07693,1,4,main,text,,"Solve the following code contest problem: {problem_name}.
+Problem description: {problem_description}.
+Currently, the code is
+```
+{program_candidate}
+```
+Modify the code as {bug_summary}.
+You must only return correct code.
+Remove any triple quotes, language name or explanations.",
+2503.14852,0,,,,,,
+2503.22688,1,0,figure,text,,,
+2503.22688,1,1,figure,text,,,
+2503.22688,1,2,figure,text,,,
+2503.22688,1,3,figure,text,,,
+2503.22688,1,4,figure,text,,,
+2503.22688,1,5,figure,text,,,
+2503.22688,1,6,figure,text,,,
+2503.22688,1,7,figure,text,,,
+2505.04251,0,,,,,,
+2505.06880,1,0,figure,text,,"Return list of all prefixes from
+shortest to longest of the input
+string 
+def all_prefixes (string: str) -> List[str]: 
+",
+2505.06880,1,1,figure,text,,"Return list of all prefixes from
+shortest to longest of the input
+string. Avoid the empty string.
+def all_prefixes (string: str) -> List[str]: ",
+2505.06880,1,2,figure,text,,"def string_sequence(n: int) -> str:
+"""""" Return a string containing
+space-delimited numbers starting
+from 0 upto n inclusive.
+>>> string_sequence(0)
+'0'
+>>> string_sequence(5)
+'0 1 2 3 4 5'
+""""""",
+2505.06880,1,3,listing,text,,"I will provide you with a set of prompts. Without
+changing the meaning of each prompt, rewrite each one
+in 10 different ways.",
+2505.06880,1,4,listing,text,,"I will provide you with ten function signatures and
+corresponding test cases, along with the description of
+the function’s functionality. Please improve the accuracy
+of the description to make it more suitable for all test
+cases of each function. For each function, provide me with
+ten improved descriptions.",
+2505.12331,1,0,figure,text,,"You are an expert on C programming.
+Please optimize the following C function snippet (dont add header files) and (1)
+ensure memory safety (2) improve code efficiency. Give the optimized code directly
+without explanation. The code is as following:
+```=c
+static zval *zho_it_get_current_data(zend_object_iterator *iter){
+ zend_hooked_object_iterator *hooked_iter = (zend_hooked_object_iterator*)iter;
+ zho_it_fetch_current(iter);
+ return &hooked_iter->current_data;",
+2505.19736,0,,,,,,
+2506.02490,1,0,figure,text,,"### Task Description
+Refer to the predefined resource kinds and naming convention. Analyze the
+following Kubernetes error message that includes {involved object}.
+### Analysis Steps
+1. Recognize the {involved object} as the starting point of the issue.
+2. Identify the most critical Kubernetes native and external resources relevant to",
+2506.02490,1,1,figure,text,,"### Graph Knowledge of Entity Taxonomy
+The predefined Kubernetes native resource kinds and external resource kinds are
+listed below:",
+2506.02490,1,2,figure,text,,"### Analysis Steps
+3. Chain MATCH Clauses Based on the Metapath:
+(1) Continue the query by adding MATCH clauses for each part of the provided
+metapath. For each segment of the metapath, use the node type (srcKind and
+destKind) as the label for the source and destination node. Use the relationship type
+(relType) as the label for the connecting relationship, and apply a WHERE clause
+based on the ‘key’ property value (propertyValue) specified for that relationship:",
+2506.02490,1,3,figure,text,,"### Analysis Steps
+3. Conduct an evaluation to determine if there is any evidence (e.g., misconfigurations or errors) in the JSON fields, especially those which could align with the
+nature of the provided error message.",
+2506.02490,1,4,figure,text,,"### Task Description
+Based on the previous analysis of [{kinds}], summarize the root cause of the
+error message, and pinpoint out the most relevant parts.",
+2506.02490,1,5,figure,text,,"### Analysis Steps
+Finally, determine if further investigation is needed. Scoring and Investigation
+Criteria:",
+2507.01103,0,,,,,,
+2507.07026,0,,,,,,
+2507.09051,1,0,main,image,,You are provided with an app review of a mental health mobile application in this format:,
+2507.15003,0,,,,,,
+2508.20370,1,0,figure,text,,,
+2508.20370,1,1,figure,text,,,
+2509.04642,1,0,appendix,text,,,
+2509.04642,1,1,appendix,text,,,
+2509.04642,1,2,appendix,text,,,
+2509.04642,1,3,appendix,text,,,
+2509.04642,1,4,appendix,text,,,
+2509.04642,1,5,appendix,text,,,
+2509.04642,1,6,appendix,text,,,
+2509.04642,1,7,appendix,text,,,
+2509.04642,1,8,appendix,text,,,
+2509.04642,1,9,appendix,text,,,
+2509.04642,1,10,appendix,text,,,
+2509.04642,1,11,appendix,text,,,
+2509.04642,1,12,appendix,text,,,
+2509.04642,1,13,appendix,text,,,
+2509.04642,1,14,appendix,text,,,
+2509.04642,1,15,appendix,text,,,
+2509.04642,1,16,appendix,text,,,
+2509.04642,1,17,appendix,text,,,
+2509.04642,1,18,appendix,text,,,
+2509.04642,1,19,appendix,text,,,
+2509.04642,1,20,appendix,text,,,
+2509.04642,1,21,appendix,text,,,
+2509.04642,1,22,appendix,text,,,
+2509.05596,0,,,,,,
+2509.20215,1,0,main,image,,"#### Code Verification Task 
+1. Code Analysis Phase: Conduct a thorough logic and functional analysis of the provided Verilog code to fully understand its semantics and intended behavior. ",
+2509.20215,1,1,main,image,,">>> Problem Statement: {{NL}}
+>>> Verilog Code: {{Code}}
+>>> Answer: ",
+2510.03890,0,,,,,,
+2510.09494,0,,,,,,
+2510.10407,0,,,,,,
+2510.15690,1,0,figure,text,,"Question:
+You will analyze a code snippet to identify a buggy API call and explain the associated issue. Think step-by-step as below examples.",
+2510.15690,1,1,figure,text,,"Question:
+Issue Title: {issue title}
+Issue Desc: {issue description}
+Issues Code Snippet: ``` {issue code} ``` Task 1 : ... Task 2 :… Task3 : …",
+2510.15690,1,2,figure,text,,"Question:
+You are a helpful code assistant expert in Deep Learning Framework. Based on the provided issue description and code snippet, verify
+whether the specified API is the one triggering the bug, and provide the verification status and a brief explanation in strict JSON format.",
+2510.15690,1,3,figure,text,,"Question:
+You are a helpful code assistant expert in Deep Learning Framework. Please generate code that can trigger similar bugs for the source
+API, utilizing the bug data from the similar API. Think step-by-step as below examples.
+Example:
+Source Deep Learning Framework: OneFlow
+Source API: flow.nn.ReflectionPad1d",
+2510.15690,1,4,figure,text,,"Question:
+Source Deep Learning Framework: {source_api_framework}; Source API: {source_api}; Source API Documention: {source_api_doc}
+The source API has a similar API {target_api} in {target_api_framework}; They are {sim_type} API pairs, ...; The similar API
+Documention: {target_api_doc}; The similar API’s buggy code:{buggy_code}; Root cause of the bug: {root_cause}; List of parameters
+causing the bug: {params}; Task1 …; Task2 …;",
+2510.19667,0,,,,,,
+2511.17540,0,,,,,,
+2512.09352,0,,,,,,
+2512.15076,1,0,main,text,,"Your task is to rephrase/reformulate the code prompt given below to achieve a higher
+score on code generation by a large language model. Please provide the rephrased prompt in one block.",
+2512.15076,1,1,figure,text,,"def multiply(a, b):
+ """"""Complete the function that takes
+ two integers and returns
+ the product of their unit digits.
+ Assume the input is always valid.
+ Examples:
+ multiply(148, 412) should return 16.
+ multiply(19, 28) should return 72.
+ multiply(2020, 1851) should return 0.
+ multiply(14,-15) should r",
+2512.15076,1,2,figure,text,,"Write a function named `multiply` that takes
+two integer arguments `a` and `b`. The
+function should return the product of the
+unit digits of `a` and `b`. For example,
+`multiply(148, 412)` should return `16`,
+`multiply(19, 28)` should return `72`,
+`multiply(2020, 1851)` should return `0`,
+and `multiply(14, -15)` should return `20`.
+Ensure that the input values are always
+valid and handle edge cases appropriately.",
+2512.15076,1,3,main,text,,You are given a rectangular grid of wells...,
+2512.15076,1,4,main,text,,Please write a function called max_fill that takes in a rectangular grid of wells and a capacity as input...,
+2512.15076,1,5,figure,text,,"import math
+def max_fill(grid, capacity):
+ """"""
+ You are given a rectangular grid of wells.
+ Each row represents a single well, and each
+ 1 in a row represents a single unit of
+ water. Each well has a corresponding bucket
+ that can be used to extract water from it,
+ and all buckets have the same capacity. Your
+ task is to use the buckets to empty the
+ wells. Output the number of times you need
+ to lower the buckets.
+ Example 1:
+ Input: grid : [[0,0,1,0], [0,1,0,0],
+ [1,1,1,1]] bucket_capacity : 1
+ Output: 6
+ Example 2:
+ Input: grid : [[0,0,1,1], [0,0,0,0],
+ [1,1,1,1], [0,1,1,1]] bucket_capacity: 2
+ Output: 5
+ Example 3:
+ Input: grid : [[0,0,0], [0,0,0]]
+ bucket_capacity : 5
+ Output: 0
+ Constraints:
+ * all wells have the same length
+ * 1 <= grid.length <= 10^2
+ * 1 <= grid[:,1].length <= 10^2
+ * grid[i][j] -> 0 | 1
+ * 1 <= capacity <= 10 """"""",
+2512.15076,1,6,figure,text,,"Please write a function called
+`max_fill` that takes in a
+rectangular grid of wells and a
+capacity as input, and outputs
+the number of times you need to
+lower the buckets to empty the
+wells. The grid is represented as
+a 2D array of booleans, where
+each row represents a single well
+and each 1 in a row represents a
+single unit of water. Each well
+has a corresponding bucket that
+can be used to extract water from
+it, and all buckets have the same
+capacity. Your task is to use the
+buckets to empty the wells. The
+function should solve the problem
+by iterating through the rows of
+the grid, keeping track of the
+number of times each bucket needs
+to be lowered to empty each well,
+and returning the total number of
+bucket lowerings needed. The
+function should take into account
+the constraints provided in the
+problem statement, including the
+length of the grid, the length of
+each row, and the capacity of
+each bucket.",
+2512.15076,1,7,figure,text,,"def get_closest_vowel(word):
+ """"""You are given a word. Your task is
+ to find the closest vowel that stands
+ between two consonants from the right
+ side of the word (case sensitive).
+ Vowels in the beginning and ending
+ doesn't count. Return empty string if
+ you didn'tfind any vowel met the above
+ condition. You may assume that the
+ given string contains English letter
+ only.
+ Example:
+ get_closest_vowel(""yogurt"") ==> ""u""
+ get_closest_vowel(""FULL"") ==> ""U""
+ get_closest_vowel(""quick"") ==> """"
+ get_closest_vowel(""ab"") ==> """" """"""",
+2512.15076,1,8,figure,text,,"Given a word, your task is to find the
+closest vowel that is positioned between
+two consonants from the right side of the
+word, taking into account case
+sensitivity. Vowels at the beginning or
+end of the word do not count. Return an
+empty string if no vowel meets the
+specified condition.
+You may assume that the input string
+consists solely of English letters.
+Example: get_closest_vowel(""yogurt"") ==>
+""u""
+Example: get_closest_vowel(""FULL"") ==> ""U""
+Example: get_closest_vowel(""quick"") ==> """"
+Example: get_closest_vowel(""ab"") ==> """"",
+2512.15076,1,9,figure,text,,"def numerical_letter_grade(grades):
+ """"""It is the last week of the semester
+ and the teacher has to give the grades
+ to students. The teacher has been
+ making her own algorithm for grading.
+ The only problem is, she has lost the
+ code she used for grading.
+ She has given you a list of GPAs for
+ some students and you have to write
+ a function that can output a list of
+ letter grades using the following table:
+ GPA | Letter grade
+ 4.0 A+
+ > 3.7 A
+ > 3.3 A-
+ > 3.0 B+
+ > 2.7 B
+ > 2.3 B-
+ > 2.0 C+
+ > 1.7 C
+ > 1.3 C-
+ > 1.0 D+
+ > 0.7 D
+ > 0.0 D-
+ 0.0 E
+ Example:
+ grade_equation([4.0, 3, 1.7, 2, 3.5])
+==> ['A+', 'B', 'C-', 'C', 'A-']
+ """"""",
+2512.15076,1,10,figure,text,,"Given a list of GPAs (Grade Point Average)
+for a group of students, generate a
+function that outputs a list of letter
+grades corresponding to the GPA values.
+The function should use a table of letter
+grades and their corresponding GPA values
+to determine the appropriate letter grade
+for each GPA. The table should be
+represented as follows:
+| GPA | Letter Grade |
+| --- | --- |
+| 4.0 | A+ |
+| > 3.7 | A |
+| > 3.3 | A- |
+| > 3.0 | B+ |
+| > 2.7 | B |
+| > 2.3 | B- |
+| > 2.0 | C+ |
+| > 1.7 | C |
+| > 1.3 | C- |
+| > 1.0 | D+ |
+| > 0.7 | D |
+| > 0.0 | D- |
+| 0.0 | E |
+Example: numerical_letter_grade([4.0, 3,
+1.7, 2, 3.5]) ==> ['A+', 'B', 'C-', 'C',
+'A-'] ",
+2512.15076,1,11,main,text,,Your task is to use the buckets to empty the wells,
+2512.15076,1,12,main,text,,"The function should solve the problem by iterating through the rows of the
+grid, keeping track of the number of times each bucket needs to be lowered to empty each well, and returning the total number of bucket lowerings needed",
+2512.15834,0,,,,,,
+2512.18852,0,,,,,,
+2601.04886,0,,,,,,
+2601.06281,0,,,,,,
+2601.06615,1,0,figure,text,,,
+2601.06615,1,1,figure,text,,,
+2601.06615,1,2,figure,text,,,
+2601.06615,1,3,figure,text,,,
+2601.06615,1,4,figure,text,,,
+2601.06615,1,5,figure,text,,,
+2601.06615,1,6,main,text,,,
+2601.12634,1,0,appendix,text,,"You are an Android security and data privacy expert with extensive knowledge of Android permissions and regulatory policies. Your expertise includes interpreting natural language
+policy statements and mapping them to technical permissions on the Android platform.",
+2601.12634,1,1,appendix,text,,"Task: Analyze the following policy document and identify data access restrictions for mobile applications.
+Policy Document: [POLICY_TEXT_PLACEHOLDER]
+Instructions:
+(1) Identify prohibited data types:
+• Unconditionally prohibited: Data types explicitly banned
+regardless of user consent
+• Conditionally prohibited: Data types that require explicit
+user consent
+(2) Map to Android permissions: For each identified data type,
+determine the corresponding Android permissions required
+to access that data.
+(3) Reasoning process:
+a. Extract all statements relating to data access prohibitions
+b. Classify each as unconditional or conditional based on
+consent requirements
+c. Map prohibited data types to specific Android permissions
+d. Explain reasoning for uncertain mappings
+Output Format: For each identified restriction, provide: Data Type (as described in policy), Prohibition Type (unconditional/conditional), Android Permissions (specific permission names), and Notes (any ambiguities or uncertainties).",
+2602.00933,1,0,appendix,text,,"You are evaluating how well a model’s response addresses a specific expert-defined claim.
+SCORING CRITERIA:
+- fulfilled: Claim is completely and accurately addressed. The response covers all key details.
+- partially_fulfilled: Claim is partially addressed. The response covers some but not all
+key details.
+- not_fulfilled: Claim is not addressed. The response does not include any key details.",
+2602.00933,1,1,appendix,text,,"I’m researching papers on advertisement effectiveness and comparing it to our own online database advertising
+data. There’s a 2024 paper by Jane Castleman that deals with ad control effectiveness, can you get me the abstract?
+I believe it mentions ad locality, for which I will also need to ask you for the date of our campaign with the biggest
+engagement rate, started during the 2015–2023 period, and its locality.",
+2602.00933,1,2,appendix,text,,"You are diagnosing why a model failed on an MCP (Model Context Protocol) tool-use evaluation
+task.
+The model was connected to live MCP tool servers in sandboxed Docker environments and had to
+use tools to answer a multi-step question. Its final text response was scored against ground-truth claims.",
+2602.10758,1,0,figure,text,,"You are a legal analysis assistant specializing in license agreements. Your task is to analyze the given text and identify key legal terms, categorize actions, and infer rules or conditions for these actions. Always respond in a structured and concise format. Use JSON for output as specified. Ensure that the output strictly follows the format provided in the example. Analyze the following license text and complete the tasks below:",
+2602.18800,1,0,figure,text,,Write a Java program to replace a specified character with another character,Not entirely sure on this. 
+2603.04857,1,0,appendix,text,,"Please solve the problem presented below
+by thinking step by step. Put your final
+answer at the end of your response. Your
+final answer should be a single uppercase letter in \\boxed[] (e.g. \\boxed[A
+]).",
+2603.04857,1,1,appendix,text,,"Please collect the following list of
+information in EXACTLY this order, one at
+a time:",
+2603.04857,1,2,appendix,text,,"Please sort the following table by the
+column '{first_selected_column}', in a {
+order} order. {return_rows_prompt}.
+You must follow the following
+instructions carefully.
+- You must exactly recite the entire
+selected rows in the table, in a CSV
+format, not including the headers.",
+2603.04857,1,3,appendix,text,,"Please solve the problem presented below
+by thinking step by step. Put your final
+answer at the very end of your response.
+Your final answer should be a single
+upper-case letter after Answer: (e.g.
+Answer: A). However, if you are unable to
+solve the problem or not sure about your
+answer, reply exactly with \""Answer:
+Skip\"".",
+2603.04857,1,4,appendix,text,,"Given a postgres table with id, name,
+parent_id and rank. Assume leaves can
+have variable number of ancestors each
+with variable ranks. Select all rows with
+one column per observed rank, filling in
+name, or nil, when the corresponding
+ancestor exists. Include exactly one
+complete SQL query labeled \""Final SQL:\"".
+Provide a single sentence explaining how
+ranks are pivoted into columns,
+explicitly stating that nil is
+represented as SQL NULL, and list the
+exact output column names used by the
+query.",
+2603.04857,1,5,appendix,text,,"Given a postgres table with id, name,
+parent_id and rank. Assume leaves can
+have variable number of ancestors each
+with variable ranks. Select all rows with
+one column per observed rank, filling in
+name, or nil, when the corresponding
+ancestor exists. Do not include any
+explanations, step-by-step reasoning,
+sample data, or result tables; output
+only a single PostgreSQL SQL SELECT query.
+Do not use non-core extensions (e.g.,
+ltree or tablefunc/connectby), and do not
+create temporary tables, views,
+functions, or procedures. Do not wrap the
+query in code fences or include SQL
+comments.",
+2604.11672,0,,,,,,
+2604.23667,0,,,,,,only in replication package
+2604.26469,0,0,main,text,,,
+2604.26572,0,,,,,,
+2605.06164,0,,,,,,
+2605.11844,0,,,,,,
+2605.23459,0,,,,,,"There is one table with input format, but is not really a prompt. "
+2606.14589,0,,,,,,
+2606.22704,0,,,,,,
+2606.26492,0,,,,,,
+2607.07235,1,0,appendix,text,,"You are an expert in robotics and control systems, tasked with auditing the explainability and trustworthiness of two different surrogate models that were learned from a reinforcement learning model using imitation learning.",
+2607.07980,1,0,appendix,text,,"You are an expert empirical software-engineering researcher and a precise data
+classifier. For the document below, decide whether it is relevant to the topic of
+CODE REVIEW.","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,1,appendix,text,,"This is a thematic analysis of how the code review process is changing, especially
+with the arrival of AI coding agents, and what the consequences of that change are.","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,2,appendix,text,,"[Neutral] An empirical software engineering researcher coding inductively in the grounded-theory tradition, building codes bottom-up from the participants’ own words, without preconceived categories or any prior view on whether AI helps or harms code review, attentive both to the process and practice of code review (workflow, effort, norms, standards, roles, tooling, the speed and volume of changes) and to its human and social dimensions (trust, account ability, skill, learning, collaboration, and the relationships among the people and tools involved), and to how all of these are shifting.
+[Critical] An empirical software engineering researcher reading the data through a critical lens, attentive to ways AI coding agents and automated review may erode code review, including its quality, the depth of understanding it provides, trust, and accountability.","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,3,appendix,text,,"You segment documents into topical sections for qualitative analysis. You receive a
+document with each line prefixed by its line number. ","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,4,appendix,text,,"You are a coder in thematic analysis. When given a text segment, write 1-3 codes for the segment. The code should capture concepts or ideas with the most analytical interest, relevant to the research focus.","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,5,appendix,text,,"You are an expert qualitative researcher responsible for organizing codes from multiple coders. Your task is to identify codes with similar meanings that should be merged, while retaining codes that represent distinct concepts.","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,6,appendix,text,,"You are an expert qualitative researcher responsible for reviewing codes and maintaining codebook quality. Your task is to evaluate aggregated codes and decide whether to add them to the codebook, merge them with existing codes, or reject them.","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,7,appendix,text,,"You adopt the following analyst perspective ( verbatim, the same perspective used during coding): {lens}","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,8,appendix,text,,"You are analysing the codes within ONE category of a thematic analysis of practitioner discourse (Reddit + web, 2025-2026). Research question (scope):
+{research question}","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07980,1,9,appendix,text,,"We study ONE phenomenon: software teams increasingly use AI coding agents to WRITE
+code, and we want the impact on the CODE REVIEW PROCESS. Keep two settings SEPARATE:
+- AUTOMATED code review: AI / tools acting as the reviewer (AI reviewing code).
+- MANUAL code review: humans reviewing code, especially AI-written code.","It is in a box, but inside appendix, so the ""Where"" selection is a bit misleading, since the box option can be within appendix. Second prompt is more of a research context given to agents. "
+2607.07987,0,,,,,,
+2607.17012,0,,,,,,
+2607.18064,0,,,,,,"There is the PROGRAM.md in the replication package which describes the instructions, but it is not a prompt in a traditional sense. "
+2607.21832,0,,,,,,
+2607.26191,0,,,,,,
+2607.26390,1,0,figure,text,,"Database connection in
+{file_name}.py is not working",
+2607.29516,0,,,,,,

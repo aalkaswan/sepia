@@ -1,0 +1,581 @@
+{
+ "7916f891f903": {
+  "cluster": 0,
+  "name": "Vulnerability detection and security"
+ },
+ "055f84287a4a": {
+  "cluster": 1,
+  "name": "Unit test generation"
+ },
+ "c29c36100947": {
+  "cluster": 2,
+  "name": "Programming problem solving"
+ },
+ "d7558127ec3b": {
+  "cluster": 4,
+  "name": "Program repair"
+ },
+ "5218d14d7571": {
+  "cluster": 5,
+  "name": "LLM-as-judge evaluation and scoring"
+ },
+ "511488ee1520": {
+  "cluster": 6,
+  "name": "Agent trajectory analysis and verification"
+ },
+ "3e9cd9c7894f": {
+  "cluster": 7,
+  "name": "Code generation from specifications"
+ },
+ "8cdaf8c6447d": {
+  "cluster": 8,
+  "name": "Code review and patch assessment"
+ },
+ "328390879a22": {
+  "cluster": 9,
+  "name": "Tool use and function calling"
+ },
+ "37e48f36aecb": {
+  "cluster": 11,
+  "name": "Code performance optimization"
+ },
+ "114dec8441f2": {
+  "cluster": 12,
+  "name": "Simulation, plotting and G-code"
+ },
+ "6f46c59cd2d9": {
+  "cluster": 13,
+  "name": "JSON schemas and structured output"
+ },
+ "971c05fa55d6": {
+  "cluster": 14,
+  "name": "GPU kernels and HPC code"
+ },
+ "ef2a06d9fbec": {
+  "cluster": 15,
+  "name": "Document QA and information extraction"
+ },
+ "c56557319cd8": {
+  "cluster": 16,
+  "name": "Code summarization and explanation"
+ },
+ "8cb98b06419a": {
+  "cluster": 17,
+  "name": "GUI agents and UI testing"
+ },
+ "cd23618f779a": {
+  "cluster": 18,
+  "name": "Environment setup and builds"
+ },
+ "6551e21625eb": {
+  "cluster": 19,
+  "name": "Issue reproduction tests"
+ },
+ "09211b020afb": {
+  "cluster": 21,
+  "name": "Refactoring and readability"
+ },
+ "c7ccaadff4f7": {
+  "cluster": 22,
+  "name": "Classification and taxonomy labelling"
+ },
+ "b5e5a66363b9": {
+  "cluster": 23,
+  "name": "C program specification (ACSL) and analysis summaries"
+ },
+ "025265dec0f2": {
+  "cluster": 24,
+  "name": "UML and domain modelling"
+ },
+ "23225a3d8913": {
+  "cluster": 26,
+  "name": "Constraint and design-requirement generation"
+ },
+ "4b2061c73e5c": {
+  "cluster": 27,
+  "name": "Code similarity and equivalence"
+ },
+ "e6e32f5a76cf": {
+  "cluster": 28,
+  "name": "Requirements elicitation and extraction"
+ },
+ "f14cd485f0d8": {
+  "cluster": 29,
+  "name": "Root-cause analysis and incident response"
+ },
+ "3345f7dc6be5": {
+  "cluster": 30,
+  "name": "Fault and issue localization"
+ },
+ "9c0eb3782e9e": {
+  "cluster": 31,
+  "name": "Task planning and decomposition"
+ },
+ "1ebcc9962337": {
+  "cluster": 33,
+  "name": "Shell commands and terminal agents"
+ },
+ "703a8713bf41": {
+  "cluster": 34,
+  "name": "Hardware design (Verilog/RTL)"
+ },
+ "abcb59671d07": {
+  "cluster": 35,
+  "name": "Web front-end generation"
+ },
+ "6755a22038d5": {
+  "cluster": 36,
+  "name": "Code execution reasoning (output prediction)"
+ },
+ "155a763c26a7": {
+  "cluster": 37,
+  "name": "Image analysis and visual QA"
+ },
+ "dc4adf5d2b57": {
+  "cluster": 40,
+  "name": "Text-to-SQL and databases"
+ },
+ "874900e9e9a0": {
+  "cluster": 41,
+  "name": "Software architecture and design decisions"
+ },
+ "a0cf19d017ce": {
+  "cluster": 44,
+  "name": "C/C++ programs and competitive programming"
+ },
+ "e4d66c32d1b1": {
+  "cluster": 45,
+  "name": "Coding agents and multi-file project generation"
+ },
+ "8711bb76221c": {
+  "cluster": 48,
+  "name": "Theorem proving (Lean, Rocq)"
+ },
+ "989e9e4b6c6c": {
+  "cluster": 49,
+  "name": "Prompt templates and data synthesis"
+ },
+ "5de592635e11": {
+  "cluster": 50,
+  "name": "Commit messages and code changes"
+ },
+ "b94930f93c37": {
+  "cluster": 51,
+  "name": "Reasoning and answer-format instructions"
+ },
+ "4c7b0123cc75": {
+  "cluster": 52,
+  "name": "Code authorship and style analysis"
+ },
+ "ae180b9e6b3f": {
+  "cluster": 53,
+  "name": "Prompt and instruction change analysis"
+ },
+ "bb1c84c97de6": {
+  "cluster": 54,
+  "name": "Smart contracts (Solidity)"
+ },
+ "617d3fc72cb0": {
+  "cluster": 55,
+  "name": "Code edit formats (search/replace, infill)"
+ },
+ "2bec75d995f4": {
+  "cluster": 56,
+  "name": "Research assistance and qualitative analysis"
+ },
+ "09f4ed292e53": {
+  "cluster": 57,
+  "name": "Programming education and feedback"
+ },
+ "bd9940b307ad": {
+  "cluster": 58,
+  "name": "Model transformation and metamodels"
+ },
+ "52782de6ff68": {
+  "cluster": 59,
+  "name": "Binary analysis and decompilation"
+ },
+ "77675ed89304": {
+  "cluster": 61,
+  "name": "Formal specification (TLA+, SMT)"
+ },
+ "002f765f766c": {
+  "cluster": 62,
+  "name": "Ranking and prioritisation"
+ },
+ "36d745d1d08b": {
+  "cluster": 63,
+  "name": "Data analysis with pandas and CSV"
+ },
+ "7fda586b0569": {
+  "cluster": 64,
+  "name": "Scene and spatial layout generation"
+ },
+ "981b073329a6": {
+  "cluster": 65,
+  "name": "Loop invariants and verification contracts (JML, Verus)"
+ },
+ "95c0cc32d592": {
+  "cluster": 66,
+  "name": "Bug injection and mutation"
+ },
+ "3ae550b2bde1": {
+  "cluster": 68,
+  "name": "Memory-safety analysis (C/C++)"
+ },
+ "a9f0d2c01256": {
+  "cluster": 69,
+  "name": "Design-parameter optimization agents"
+ },
+ "048ce71c6eb8": {
+  "cluster": 70,
+  "name": "Operations-research modelling"
+ },
+ "9cd4a14b5830": {
+  "cluster": 71,
+  "name": "Autonomous-driving testing"
+ },
+ "7d573dd8b84c": {
+  "cluster": 73,
+  "name": "Code origin detection (human vs. AI)"
+ },
+ "86de7f432da9": {
+  "cluster": 78,
+  "name": "Requirements and entity classification"
+ },
+ "55d90ac750ee": {
+  "cluster": 80,
+  "name": "Binary function similarity"
+ },
+ "806b4482b97e": {
+  "cluster": 82,
+  "name": "Function-call and call-graph questions"
+ },
+ "703ff6fa258f": {
+  "cluster": 86,
+  "name": "Feature and scenario synthesis for benchmarks"
+ },
+ "84d6771d3ece": {
+  "cluster": 88,
+  "name": "API request generation"
+ },
+ "0c29b973d7f7": {
+  "cluster": 12,
+  "name": "Code generation",
+  "parts": [
+   "Simulation, plotting and G-code",
+   "GPU kernels and HPC code",
+   "Hardware design (Verilog/RTL)",
+   "Web front-end generation",
+   "Smart contracts (Solidity)",
+   "Code edit formats (search/replace, infill)",
+   "Scene and spatial layout generation",
+   "Code completion and editing assistance",
+   "General code generation"
+  ]
+ },
+ "3008104b47fd": {
+  "cluster": 2,
+  "name": "Algorithmic problem solving",
+  "parts": [
+   "Programming problem solving",
+   "Code generation from problem specifications",
+   "C/C++ programs and competitive programming",
+   "Algorithm exercises and problem design"
+  ]
+ },
+ "eafda8dbe67b": {
+  "cluster": 10,
+  "name": "Code translation and migration",
+  "parts": [
+   "Code translation and migration"
+  ]
+ },
+ "356f6cca0856": {
+  "cluster": 1,
+  "name": "Test generation and testing",
+  "parts": [
+   "Unit test generation",
+   "Issue reproduction tests",
+   "Bug injection and mutation",
+   "Autonomous-driving testing"
+  ]
+ },
+ "526ec28c0f9c": {
+  "cluster": 4,
+  "name": "Debugging, fault localization and repair",
+  "parts": [
+   "Program repair",
+   "Root-cause analysis and incident response",
+   "Fault and issue localization"
+  ]
+ },
+ "58f1dd859ccc": {
+  "cluster": 8,
+  "name": "Code review, refactoring and optimization",
+  "parts": [
+   "Code review and patch assessment",
+   "Code performance optimization",
+   "Refactoring and readability",
+   "Commit messages and code changes"
+  ]
+ },
+ "db9c21326da9": {
+  "cluster": 16,
+  "name": "Code understanding and analysis",
+  "parts": [
+   "Code summarization and explanation",
+   "Code similarity and equivalence",
+   "Code execution reasoning (output prediction)",
+   "Code authorship and style analysis",
+   "Code origin detection (human vs. AI)",
+   "Function-call and call-graph questions"
+  ]
+ },
+ "100fb3941588": {
+  "cluster": 0,
+  "name": "Security and binary analysis",
+  "parts": [
+   "Vulnerability detection and security",
+   "Binary analysis and decompilation",
+   "Memory-safety analysis (C/C++)",
+   "Binary function similarity"
+  ]
+ },
+ "1825eb7eb516": {
+  "cluster": 23,
+  "name": "Formal specification and verification",
+  "parts": [
+   "C program specification (ACSL) and analysis summaries",
+   "Theorem proving (Lean, Rocq)",
+   "Formal specification (TLA+, SMT)",
+   "Loop invariants and verification contracts (JML, Verus)"
+  ]
+ },
+ "f9676a349e2a": {
+  "cluster": 26,
+  "name": "Requirements engineering",
+  "parts": [
+   "Constraint and design-requirement generation",
+   "Requirements elicitation and extraction",
+   "Requirements and entity classification"
+  ]
+ },
+ "f9287fe0e205": {
+  "cluster": 24,
+  "name": "Software design and modelling",
+  "parts": [
+   "UML and domain modelling",
+   "Software architecture and design decisions",
+   "Model transformation and metamodels"
+  ]
+ },
+ "5e6eeb826403": {
+  "cluster": 5,
+  "name": "LLM-as-judge evaluation and ranking",
+  "parts": [
+   "LLM-as-judge evaluation and scoring",
+   "Ranking and prioritisation"
+  ]
+ },
+ "63dceb6d4e17": {
+  "cluster": 6,
+  "name": "Agents, tool use and planning",
+  "parts": [
+   "Agent trajectory analysis and verification",
+   "Tool use and function calling",
+   "Task planning and decomposition",
+   "Coding agents and multi-file project generation",
+   "API request generation"
+  ]
+ },
+ "fba226437064": {
+  "cluster": 18,
+  "name": "Environment setup, builds and shell",
+  "parts": [
+   "Environment setup and builds",
+   "Shell commands and terminal agents"
+  ]
+ },
+ "bf81febff4da": {
+  "cluster": 17,
+  "name": "GUI and visual tasks",
+  "parts": [
+   "GUI agents and UI testing",
+   "Image analysis and visual QA"
+  ]
+ },
+ "c4fe11b77713": {
+  "cluster": 15,
+  "name": "Information extraction and classification",
+  "parts": [
+   "Document QA and information extraction",
+   "Classification and taxonomy labelling"
+  ]
+ },
+ "831c7dc130b3": {
+  "cluster": 13,
+  "name": "Data, SQL and structured output",
+  "parts": [
+   "JSON schemas and structured output",
+   "Text-to-SQL and databases",
+   "Data analysis with pandas and CSV"
+  ]
+ },
+ "bf020c2c0bba": {
+  "cluster": 49,
+  "name": "Prompt engineering and data synthesis",
+  "parts": [
+   "Prompt templates and data synthesis",
+   "Reasoning and answer-format instructions",
+   "Prompt and instruction change analysis",
+   "Feature and scenario synthesis for benchmarks"
+  ]
+ },
+ "318c42505dd7": {
+  "cluster": 56,
+  "name": "Research and education",
+  "parts": [
+   "Research assistance and qualitative analysis",
+   "Programming education and feedback"
+  ]
+ },
+ "e32755e08fe7": {
+  "cluster": 69,
+  "name": "Optimization and mathematical modelling",
+  "parts": [
+   "Design-parameter optimization agents",
+   "Operations-research modelling"
+  ]
+ },
+ "28b765ecfd58": {
+  "cluster": 0,
+  "name": "Security and binary analysis",
+  "parts": [
+   "Vulnerability detection and security",
+   "Binary analysis and decompilation",
+   "Memory-safety analysis (C/C++)",
+   "Binary function similarity",
+   "Cryptography and authentication code",
+   "Proof-of-concept exploits",
+   "Deobfuscation",
+   "CVE and CWE mapping",
+   "Security knowledge extraction"
+  ]
+ },
+ "a6dcada8cd26": {
+  "cluster": 9,
+  "name": "Agents, tool use and planning",
+  "parts": [
+   "Tool use and function calling",
+   "Task planning and decomposition",
+   "Coding agents and multi-file project generation",
+   "API request generation"
+  ]
+ },
+ "75c72f5192c8": {
+  "cluster": 93,
+  "name": "LLM safety, prompt injection and privacy",
+  "parts": [
+   "Alignment and compliance tests",
+   "Safety hazard analysis",
+   "Privacy-preserving query rewriting"
+  ]
+ },
+ "391684cc25b8": {
+  "cluster": 0,
+  "name": "Security and binary analysis",
+  "parts": [
+   "Vulnerability detection and security",
+   "Binary analysis and decompilation",
+   "Memory-safety analysis (C/C++)",
+   "Binary function similarity",
+   "Secure code generation and vulnerability repair",
+   "Red teaming, CTFs and exploitation",
+   "Malware detection",
+   "Cryptography and authentication code",
+   "Proof-of-concept exploits",
+   "Deobfuscation",
+   "CVE and CWE mapping",
+   "Security knowledge extraction"
+  ]
+ },
+ "38a97e7e4d9a": {
+  "cluster": 94,
+  "name": "LLM safety, prompt injection and privacy",
+  "parts": [
+   "Harmful-behaviour judging of agents",
+   "Alignment and compliance tests",
+   "Safety hazard analysis",
+   "Privacy-preserving query rewriting"
+  ]
+ },
+ "b1d275b4fb17": {
+  "cluster": 7,
+  "name": "Code generation from problem specifications"
+ },
+ "1d66a64e5758": {
+  "cluster": 89,
+  "name": "Code completion and editing assistance"
+ },
+ "c56c87d6f664": {
+  "cluster": 90,
+  "name": "Algorithm exercises and problem design"
+ },
+ "9a5dfd3a5b6b": {
+  "cluster": 91,
+  "name": "General code generation"
+ },
+ "15ba0c970aac": {
+  "cluster": 95,
+  "name": "Malware detection"
+ },
+ "b5d481452614": {
+  "cluster": 96,
+  "name": "Cryptography and authentication code"
+ },
+ "9c3969962485": {
+  "cluster": 97,
+  "name": "Alignment and compliance tests"
+ },
+ "68a2dae76cd0": {
+  "cluster": 98,
+  "name": "Proof-of-concept exploits"
+ },
+ "6e68e6e337ea": {
+  "cluster": 99,
+  "name": "Safety hazard analysis"
+ },
+ "814cf042fd16": {
+  "cluster": 101,
+  "name": "Deobfuscation"
+ },
+ "b840e6656f6a": {
+  "cluster": 102,
+  "name": "CVE and CWE mapping"
+ },
+ "554444c26612": {
+  "cluster": 0,
+  "name": "Vulnerability detection and security"
+ },
+ "6249db3b35a4": {
+  "cluster": 92,
+  "name": "Secure code generation and vulnerability repair"
+ },
+ "b5d4d44a65c6": {
+  "cluster": 93,
+  "name": "Red teaming, CTFs and exploitation"
+ },
+ "053fb7482a00": {
+  "cluster": 94,
+  "name": "Harmful-behaviour judging of agents"
+ },
+ "006d8f7daafd": {
+  "cluster": 100,
+  "name": "Privacy-preserving query rewriting"
+ },
+ "92f55a6bece9": {
+  "cluster": 103,
+  "name": "Security knowledge extraction"
+ }
+}

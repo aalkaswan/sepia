@@ -1,0 +1,266 @@
+{
+ "source": "task_type_regrouping.docx (2026-11-09): 16 task types under the six SE activities of Hou et al. (TOSEM 2024), an LLM-centric group and Other",
+ "rule": "A prompt gets its SE task whenever it has one. It goes to an LLM-centric type only when the prompt is about the model's role rather than a task: coding agents count as Code generation, GUI agents as Testing, terminal agents as Environment setup, builds and shell.",
+ "groups": [
+  {
+   "group": "Requirements engineering",
+   "types": [
+    {
+     "name": "Requirements engineering",
+     "clusters": [
+      "Requirements elicitation and extraction",
+      "Requirements and entity classification",
+      "Constraint and design-requirement generation",
+      "Safety hazard analysis"
+     ]
+    }
+   ]
+  },
+  {
+   "group": "Software design",
+   "types": [
+    {
+     "name": "Software design and modelling",
+     "clusters": [
+      "UML and domain modelling",
+      "Software architecture and design decisions",
+      "Model transformation and metamodels"
+     ]
+    }
+   ]
+  },
+  {
+   "group": "Software development",
+   "types": [
+    {
+     "name": "Code generation",
+     "clusters": [
+      "General code generation",
+      "Code completion and editing assistance",
+      "Code edit formats (search/replace, infill)",
+      "Programming problem solving",
+      "Code generation from problem specifications",
+      "C/C++ programs and competitive programming",
+      "Algorithm exercises and problem design",
+      "Coding agents and multi-file project generation",
+      "Web front-end generation",
+      "GPU kernels and HPC code",
+      "Hardware design (Verilog/RTL)",
+      "Smart contracts (Solidity)",
+      "Simulation, plotting and G-code",
+      "Scene and spatial layout generation",
+      "Text-to-SQL and databases",
+      "Data analysis with pandas and CSV"
+     ],
+     "second_pass": [
+      "Spreadsheet manipulation code",
+      "Function-body completion in repositories",
+      "Chart and visualisation code",
+      "Project-level implementation",
+      "Code for updated APIs",
+      "Heuristic optimisation algorithms",
+      "Code from pseudocode",
+      "Tool-calling code for CAD scripting",
+      "Game generation",
+      "Instruction-based code editing",
+      "Algorithm classes under time budgets"
+     ]
+    },
+    {
+     "name": "Code translation and migration",
+     "clusters": [
+      "Code translation and migration"
+     ]
+    },
+    {
+     "name": "Code understanding and analysis",
+     "clusters": [
+      "Code summarization and explanation",
+      "Code similarity and equivalence",
+      "Code execution reasoning (output prediction)",
+      "Code authorship and style analysis",
+      "Code origin detection (human vs. AI)",
+      "Function-call and call-graph questions"
+     ]
+    }
+   ]
+  },
+  {
+   "group": "Software quality assurance",
+   "types": [
+    {
+     "name": "Testing",
+     "clusters": [
+      "Unit test generation",
+      "Issue reproduction tests",
+      "Bug injection and mutation",
+      "GUI agents and UI testing",
+      "Autonomous-driving testing"
+     ],
+     "second_pass": [
+      "Chaos engineering",
+      "Failure-inducing test inputs",
+      "Test-suite growth for coverage and mutants"
+     ]
+    },
+    {
+     "name": "Security and binary analysis",
+     "clusters": [
+      "Vulnerability detection and security",
+      "Memory-safety analysis (C/C++)",
+      "Secure code generation and vulnerability repair",
+      "Proof-of-concept exploits",
+      "Red teaming, CTFs and exploitation",
+      "Malware detection",
+      "Binary analysis and decompilation",
+      "Binary function similarity",
+      "Deobfuscation",
+      "Cryptography and authentication code",
+      "CVE and CWE mapping",
+      "Security knowledge extraction"
+     ]
+    },
+    {
+     "name": "Formal specification and verification",
+     "clusters": [
+      "Formal specification (TLA+, SMT)",
+      "C program specification (ACSL) and analysis summaries",
+      "Loop invariants and verification contracts (JML, Verus)",
+      "Theorem proving (Lean, Rocq)"
+     ],
+     "second_pass": [
+      "Pre- and postconditions",
+      "JML annotation and invariants",
+      "Dafny and Verus proofs",
+      "Specification repair (JML, TLA+)"
+     ]
+    }
+   ]
+  },
+  {
+   "group": "Software maintenance",
+   "types": [
+    {
+     "name": "Debugging, fault localization and repair",
+     "clusters": [
+      "Program repair",
+      "Fault and issue localization",
+      "Root-cause analysis and incident response"
+     ],
+     "second_pass": [
+      "CI repair problem mining",
+      "Bug detection",
+      "Fault localization in code",
+      "Crash and stack-trace debugging",
+      "Issue repair with search/replace edits",
+      "Fixing code from failing tests",
+      "Issue reports and fixes",
+      "Service anomaly analysis"
+     ]
+    },
+    {
+     "name": "Code review, refactoring and optimization",
+     "clusters": [
+      "Code review and patch assessment",
+      "Refactoring and readability",
+      "Code performance optimization",
+      "Commit messages and code changes"
+     ],
+     "second_pass": [
+      "Code smell detection"
+     ]
+    }
+   ]
+  },
+  {
+   "group": "Software management",
+   "types": [
+    {
+     "name": "Environment setup, builds and shell",
+     "clusters": [
+      "Environment setup and builds",
+      "Shell commands and terminal agents"
+     ],
+     "second_pass": [
+      "Fixing installation errors"
+     ]
+    }
+   ]
+  },
+  {
+   "group": "LLM-centric tasks",
+   "types": [
+    {
+     "name": "LLM as evaluator",
+     "clusters": [
+      "LLM-as-judge evaluation and scoring",
+      "Ranking and prioritisation",
+      "Agent trajectory analysis and verification"
+     ],
+     "second_pass": [
+      "Scoring rubrics and checklists",
+      "Tool-use and answer validity judges",
+      "Pairwise code judges",
+      "Plan evaluation"
+     ]
+    },
+    {
+     "name": "LLM as agent",
+     "clusters": [
+      "Tool use and function calling",
+      "Task planning and decomposition",
+      "API request generation"
+     ],
+     "second_pass": [
+      "Agent planning and task decomposition",
+      "Workflow-graph building agents"
+     ]
+    },
+    {
+     "name": "Data synthesis, extraction and annotation",
+     "clusters": [
+      "Prompt templates and data synthesis",
+      "Feature and scenario synthesis for benchmarks",
+      "Document QA and information extraction",
+      "Classification and taxonomy labelling",
+      "JSON schemas and structured output",
+      "Reasoning and answer-format instructions",
+      "Prompt and instruction change analysis"
+     ],
+     "second_pass": [
+      "Sentiment and emotion labelling",
+      "Question-answer pair generation",
+      "Multiple-choice question generation",
+      "Multi-hop question answering"
+     ]
+    },
+    {
+     "name": "LLM safety and privacy",
+     "clusters": [
+      "Alignment and compliance tests",
+      "Harmful-behaviour judging of agents",
+      "Privacy-preserving query rewriting"
+     ],
+     "second_pass": [
+      "Refusal and compliance classification"
+     ]
+    }
+   ]
+  },
+  {
+   "group": "Other",
+   "types": [
+    {
+     "name": "Other tasks",
+     "clusters": [
+      "Research assistance and qualitative analysis",
+      "Programming education and feedback",
+      "Operations-research modelling",
+      "Design-parameter optimization agents",
+      "Image analysis and visual QA"
+     ]
+    }
+   ]
+  }
+ ]
+}

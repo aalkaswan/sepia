@@ -1,0 +1,97 @@
+prompt_id,stratum,fit_a,fit_b,fit,better_group_a,better_group_b
+2604.24814v1#7,(none of the groups),0,0,0,Software development,LLM-centric tasks
+2605.14634v3#2,Software development,1,1,1,,
+2608.18167v1#0,Software maintenance,1,1,1,,
+2510.23538v3#8,Software development,1,1,1,,
+2608.28790v1#6,(none of the groups),0,0,0,Software maintenance,LLM-centric tasks
+2509.25671v1#3,(none of the groups),1,1,1,,
+2402.14658v3#0,LLM-centric tasks,1,1,1,,
+2510.13859v1#4,Software maintenance,1,1,1,,
+2509.21891v2#0,Software development,1,1,1,,
+2504.20781v3#0,Software design,1,1,1,,
+2504.20196v2#3,(none of the groups),1,1,1,,
+2506.02954v8#2,(none of the groups),0,0,0,Software quality assurance,Software quality assurance
+2603.04729v1#0,Software quality assurance,1,1,1,,
+2608.27299v1#3,LLM-centric tasks,1,1,1,,
+2411.04387v1#11,(none of the groups),0,0,0,Software development,Software maintenance
+2310.01642v3#1,LLM-centric tasks,1,1,1,,
+2608.27981v1#0,Software quality assurance,1,1,1,,
+2509.13758v1#0,Software development,1,1,1,,
+2511.01104v1#1,Software quality assurance,1,1,1,,
+2610.33201v1#5,LLM-centric tasks,1,1,1,,
+2505.07360v1#0,Software quality assurance,1,1,1,,
+2401.04621v3#48,Software development,x,x,x,,
+2511.00619v1#0,LLM-centric tasks,0,1,1,Software quality assurance,
+2609.07365v1#13,Software quality assurance,1,1,1,,
+2507.10054v2#1,Software quality assurance,1,1,1,,
+2508.20119v2#3,LLM-centric tasks,1,1,1,,
+2408.00994v1#0,Requirements engineering,0,1,0,Software development,
+2602.03632v1#0,(none of the groups),1,1,1,,
+2501.16945v1#0,LLM-centric tasks,1,1,1,,
+2503.06510v1#2,Software maintenance,1,1,1,,
+2503.14227v1#4,(none of the groups),0,1,0,LLM-centric tasks,
+2511.04486v2#1,(none of the groups),1,1,1,,
+2410.21909v3#8,Software maintenance,1,1,1,,
+2510.08827v1#4,(none of the groups),0,1,0,LLM-centric tasks,
+2505.02931v1#1,Software maintenance,1,1,1,,
+2607.11111v1#3,Software maintenance,1,1,1,,
+2610.30946v1#2,(none of the groups),x,x,x,,
+2509.24344v1#1,LLM-centric tasks,1,1,1,,
+2605.29737v1#2,(none of the groups),0,0,0,Software development,LLM-centric tasks
+2608.28230v1#0,Software quality assurance,1,1,1,,
+2305.10679v1#2,Software development,1,1,1,,
+2406.13264v2#10,LLM-centric tasks,1,1,1,,
+2608.00267v2#2,(none of the groups),0,0,0,Software development,LLM-centric tasks
+2410.06949v3#1,(none of the groups),0,0,0,Software development,LLM-centric tasks
+2508.10111v1#3,LLM-centric tasks,1,1,1,,
+2605.05969v2#0,(none of the groups),x,x,x,,
+2510.07189v2#3,Software development,1,0,1,,LLM-centric tasks
+2502.14202v2#1,Software management,1,1,1,,
+2604.14624v1#11,(none of the groups),0,0,0,LLM-centric tasks,LLM-centric tasks
+2508.10111v1#5,(none of the groups),1,1,1,,
+2407.00132v3#0,LLM-centric tasks,1,1,1,,
+2302.05319v5#0,(none of the groups),x,x,x,,
+2412.08593v1#0,LLM-centric tasks,0,1,1,Requirements engineering,
+2601.07084v1#0,(none of the groups),x,x,x,,
+2609.36635v1#4,Software quality assurance,1,1,1,,
+2608.14659v1#1,(none of the groups),0,0,0,LLM-centric tasks,LLM-centric tasks
+2608.24221v1#3,(none of the groups),0,0,0,LLM-centric tasks,LLM-centric tasks
+2512.21440v1#1,Software quality assurance,1,1,1,,
+2504.18050v1#3,(none of the groups),0,0,0,Software quality assurance,Software quality assurance
+2510.05156v1#0,(none of the groups),0,0,0,LLM-centric tasks,Software quality assurance
+2402.19475v1#4,Software development,1,1,1,,
+2511.01763v2#1,Software maintenance,0,0,0,Software quality assurance,Software quality assurance
+2609.20257v1#5,Software development,1,1,1,,
+2604.05719v1#6,(none of the groups),x,x,x,,
+2302.04012v2#6,Software development,x,x,x,,
+2601.02868v1#2,Software development,1,1,1,,
+2506.11021v1#2,Software development,1,1,1,,
+2602.00496v2#1,Software maintenance,x,x,x,,
+2604.04324v1#0,Software development,1,1,1,,
+2510.17862v1#2,(none of the groups),1,1,1,,
+2604.18224v1#4,Software quality assurance,1,1,1,,
+2608.21977v1#2,Software quality assurance,1,1,1,,
+2311.01490v2#4,Software development,1,1,1,,
+2512.18102v1#2,Software quality assurance,1,1,1,,
+2604.03986v1#4,(none of the groups),0,0,0,LLM-centric tasks,LLM-centric tasks
+2601.08884v1#8,Software development,1,1,1,,
+2602.03712v1#1,Software maintenance,1,1,1,,
+2603.20630v2#3,Software development,x,x,x,,
+2412.06832v2#0,LLM-centric tasks,1,1,1,,
+2607.18181v1#0,(none of the groups),1,0,1,,LLM-centric tasks
+2505.19489v2#0,Software maintenance,1,1,1,,
+2509.20837v1#0,(none of the groups),0,0,0,LLM-centric tasks,LLM-centric tasks
+2605.09421v3#12,Software development,1,0,1,,LLM-centric tasks
+2403.10588v1#1,(none of the groups),0,0,0,Software development,Software design
+2505.23422v1#11,(none of the groups),0,0,0,Software maintenance,LLM-centric tasks
+2501.18460v3#0,Software development,1,1,1,,
+2610.13703v1#0,(none of the groups),1,1,1,,
+2503.04779v4#6,Software quality assurance,1,1,1,,
+2406.04531v2#3,Software quality assurance,1,1,1,,
+2607.06636v1#0,Software quality assurance,1,1,1,,
+2608.01763v2#0,Software quality assurance,1,1,1,,
+2512.12216v2#10,Software management,1,1,1,,
+2610.41562v1#13,(none of the groups),1,1,1,,
+2605.23965v3#8,(none of the groups),0,0,0,LLM-centric tasks,Software development
+2504.10178v2#3,(none of the groups),0,0,0,Software development,LLM-centric tasks
+2409.10033v3#0,(none of the groups),0,0,0,Software maintenance,Software quality assurance
