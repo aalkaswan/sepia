@@ -64,6 +64,14 @@ their text is included.
 
 ## The arXiv snapshot
 
+Paper metadata (titles, authors, categories, versions, licences) comes from arXiv's Open Archives
+Initiative Protocol for Metadata Harvesting (OAI-PMH), the interface arXiv provides for bulk
+metadata access. The LaTeX sources are not downloaded from arXiv one by one; they are read from an
+existing dataset of arXiv sources. This keeps load off arXiv's servers, which ask that bulk
+access not go through the regular site. Only the papers missing from that dataset were fetched
+from arXiv directly (`fetch_arxiv_paper.py`), observing the 15-second crawl delay in arXiv's
+`robots.txt`.
+
 Papers were searched in a fixed snapshot of arXiv rather than on the live site, so the search is
 repeatable. The snapshot is the arXiv Complete Corpus,
 [`secemp9/arxiv-complete`](https://huggingface.co/datasets/secemp9/arxiv-complete) on Hugging Face:
