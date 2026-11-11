@@ -38,6 +38,18 @@ This package releases 8,799 LLM prompts mined from the LaTeX sources of
 A prompt is a block the detector found and that was not later marked as not being a prompt.
 A block may start with a few words of the sentence that introduced it.
 
+The 11 patterns `detector_patterns` names are in `code/collect_prompts.py` (`PATTERNS`).
+`prompt_env`, the one iteration 1 started from, matches any environment whose name contains
+"prompt":
+
+```python
+("prompt_env", re.compile(
+    r"\\begin\{(?P<env>\w*[Pp]rompt\w*)\}.{0,8000}?\\end\{(?P=env)\}", re.DOTALL), 0),
+```
+
+so `\begin{promptbox} ... \end{promptbox}` is a hit, and the `(?P=env)` backreference keeps the
+match from closing on a different environment.
+
 ## Paper records (`papers.csv`)
 
 `arxiv_id`, `version`, `title`, `authors`, `first_version_date`, `primary_category`,
