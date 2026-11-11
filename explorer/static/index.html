@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEPIA Explorer</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <script>
+    // dark by default; the toggle in the header stores the choice in this browser
+    try {
+      const t = new URLSearchParams(location.search).get("theme");  // ?theme=light|dark wins, e.g. for shared links
+      document.documentElement.dataset.theme = t === "light" || t === "dark" ? t : localStorage.getItem("sepia-theme") || "dark";
+    }
+    catch (e) { document.documentElement.dataset.theme = "dark"; }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=20261110184413">
+  <script src="https://cdn.jsdelivr.net/npm/deck.gl@9.1.14/dist.min.js"></script>
+</head>
+<body data-tab="map">
+  <header class="top">
+    <div class="brand">
+      <button class="logo" id="home" title="Back to the full map" aria-label="SEPIA, back to the full map">
+        <img class="mark" src="logo.svg" alt="" width="46" height="29">
+        <span class="wordmark">SEPIA</span>
+      </button>
+      <span class="sub">Software Engineering Prompts in Articles</span>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" id="tab-btn-map" data-tab="map" aria-selected="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6" cy="16" r="2.4"/><circle cx="11.5" cy="9" r="2.4"/><circle cx="17.5" cy="15" r="2.4"/><circle cx="18.5" cy="6" r="1.8"/><circle cx="7.5" cy="5.5" r="1.6"/><circle cx="12" cy="19.5" r="1.6"/></svg>Cluster Map</button>
+      <button role="tab" id="tab-btn-search" data-tab="search" aria-selected="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>Prompt Search</button>
+      <button role="tab" id="tab-btn-about" data-tab="about" aria-selected="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M15.5 5.2a3.3 3.3 0 0 1 0 6.6M18 14.8c2 .7 3.2 2.4 3.5 5.2"/></svg>About Us</button>
+    </nav>
+    <div class="top-right">
+      <span id="model-pill" class="pill" title="">Starting…</span>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode"></button>
+      <span class="org" title="Delft University of Technology">
+        <img class="org-logo on-light" src="brand/tudelft-color.svg" alt="TU Delft" width="66" height="27">
+        <img class="org-logo on-dark" src="brand/tudelft-white.svg" alt="TU Delft" width="66" height="27">
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Cluster map -->
+    <section id="tab-map" class="tab active" role="tabpanel" aria-labelledby="tab-btn-map">
+      <aside class="side" id="map-side">
+        <div class="side-block">
+          <div class="side-head">
+            <h3>Color by</h3>
+            <div class="seg" id="color-by">
+              <button data-v="group" class="on">Activity</button>
+              <button data-v="year">Year</button>
+            </div>
+          </div>
+          <ul id="legend" class="legend"></ul>
+          <p class="hint">Click a group for its task types.</p>
+        </div>
+        <div class="side-block" id="types-block" hidden>
+          <div class="side-head">
+            <h3 id="types-title">Task types</h3>
+            <button class="link" id="unfocus">Show All Groups</button>
+          </div>
+          <ul id="type-legend" class="legend"></ul>
+        </div>
+        <div class="side-block">
+          <h3>Filter</h3>
+          <div class="chips" id="year-chips"></div>
+          <label class="switch"><input type="checkbox" id="released-only" role="switch"><span>Only prompts with released text</span></label>
+          <label class="switch"><input type="checkbox" id="show-labels" role="switch" checked><span>Task-type labels on the map</span></label>
+          <label class="switch" title="Rings unassigned prompts in the color of their suggested task type: the type that at least 7 of their 10 nearest typed prompts share. Suggestions are not labels in the dataset."><input type="checkbox" id="show-suggest" role="switch"><span>Suggested types for unassigned</span><span class="ring-key"></span></label>
+        </div>
+        <div class="side-block">
+          <label for="map-find"><h3>Highlight on the map</h3></label>
+          <div class="find-box"><input type="search" id="map-find" class="input" placeholder="GPT-4, SWE-bench, 2401.12345" autocomplete="off" title="Rings every prompt whose text, paper title, task type or arXiv ID contains these words"></div>
+          <div id="find-count" class="find-count" hidden></div>
+        </div>
+        <div class="side-block about-card">
+          <div class="about-head"><img src="logo.svg" alt="" width="30" height="19"><h3>About the data</h3></div>
+          <p>We mine prompts from the LaTeX sources of arXiv cs.SE papers (primary or secondary category) first submitted from January 2023 to October 2026.</p>
+          <p>We plan to add PDF-only papers, SE venues beyond arXiv, and prompts shown only as images or in replication packages.</p>
+        </div>
+        <div class="side-foot">
+          <span id="map-count"></span>
+          <button class="act" id="reset-view" type="button">Reset View</button>
+        </div>
+      </aside>
+      <div class="plot-wrap">
+        <div id="map" class="plot"></div>
+        <button class="icon-btn side-toggle" id="side-toggle" type="button" aria-controls="map-side" aria-expanded="true" title="Hide the side panel"></button>
+        <div class="map-note" id="map-note" role="note">
+          <div class="mn-head"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><strong>Reading the map</strong>
+            <button class="mn-close" id="mn-close" type="button" aria-label="Hide this note" title="Hide this note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+          <p>Each dot is a prompt, placed by a 2D UMAP projection of its <a href="https://huggingface.co/microsoft/harrier-oss-v1-0.6b" target="_blank" rel="noopener">Harrier-OSS-v1-0.6B</a> embedding, so nearby prompts are similar.
+            Task types come from clustering these embeddings with UMAP and HDBSCAN, followed by manual screening.</p>
+          <div class="mn-keys"><span><kbd>scroll</kbd> zoom</span><span><kbd>drag</kbd> pan</span><span><kbd>click</kbd> details</span></div>
+        </div>
+        <button class="map-note-pill" id="mn-open" type="button" title="Show how to read this map" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>Reading The Map</button>
+      </div>
+    </section>
+
+    <!-- Prompt search -->
+    <section id="tab-search" class="tab" role="tabpanel" aria-labelledby="tab-btn-search">
+      <div class="search-main">
+        <div class="search-inner">
+          <header class="s-hero">
+            <h1>Find prompts from SE research that are similar to yours</h1>
+            <p>Paste a prompt you use, or describe the task you give the model. We compare it with the prompts mined from software engineering papers.</p>
+          </header>
+          <form id="search-form" class="composer" autocomplete="off">
+            <div class="q-wrap">
+              <textarea id="q" rows="4" placeholder="You are a senior developer. Review the following code diff and list potential bugs…" aria-label="Your prompt"></textarea>
+              <button type="button" class="q-clear" id="q-clear" title="Clear the text and the results" aria-label="Clear the text and the results" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+            </div>
+            <div class="composer-bar">
+              <div class="seg" id="mode" title="Semantic search compares meaning with the dataset's embedding model; keyword search matches words.">
+                <button type="button" data-v="semantic" class="on">Semantic</button>
+                <button type="button" data-v="keyword">Keyword</button>
+              </div>
+              <div class="filters">
+                <select id="s-group" class="pill-select" aria-label="Activity group"><option value="">All activities</option></select>
+                <select id="s-year" class="pill-select" aria-label="Year"><option value="">All years</option></select>
+                <label class="pill-check"><input type="checkbox" id="s-released"> Released text only</label>
+              </div>
+              <button type="submit" class="primary go" id="go">Search <kbd>⌘↵</kbd></button>
+            </div>
+          </form>
+          <div class="examples" id="examples"><span class="ex-label">Try</span></div>
+          <div id="results-head" class="results-head"></div>
+          <ol id="results" class="results"></ol>
+          <p id="results-foot" class="hint results-foot" hidden>Semantic results are ranked by the cosine similarity of <a href="https://huggingface.co/microsoft/harrier-oss-v1-0.6b" target="_blank" rel="noopener">Harrier-OSS-v1-0.6B</a> embeddings, the model used to cluster the dataset. Keyword results are ranked by TF-IDF.</p>
+          <div id="empty" class="empty">
+            <ol class="steps">
+              <li><span class="step-n">1</span><div><strong>Describe your prompt</strong><p>Paste a prompt, or a sentence on what you ask the model to do.</p></div></li>
+              <li><span class="step-n">2</span><div><strong>We embed it</strong><p>With <a href="https://huggingface.co/microsoft/harrier-oss-v1-0.6b" target="_blank" rel="noopener">Harrier-OSS-v1-0.6B</a>, the&nbsp;model used to cluster the dataset, after stripping LaTeX and masking template slots.</p></div></li>
+              <li><span class="step-n">3</span><div><strong>Compare</strong><p>The closest of the <span class="n-prompts"></span> prompts, with their paper, task type and place on the map.</p></div></li>
+            </ol>
+            <p class="hint">Keyword mode matches words with TF-IDF instead. Prompts from papers under the default arXiv license are searchable, but their text is not redistributed, so those results link to the paper.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="search-side">
+        <div class="side-card">
+          <h3>Where the results fall</h3>
+          <div id="mini" class="plot mini"></div>
+          <p class="hint" id="mini-hint">The results on the cluster map. The ringed dot marks where your query falls. Scroll to zoom, drag to pan.</p>
+        </div>
+        <div class="side-card" id="breakdown-card" hidden>
+          <h3>Task types among the results</h3>
+          <div id="breakdown"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About us -->
+    <section id="tab-about" class="tab" role="tabpanel" aria-labelledby="tab-btn-about">
+      <div class="about-main">
+        <div class="about-inner">
+          <header class="a-hero">
+            <div class="a-hero-text">
+              <span class="kicker">About us</span>
+              <h1>The people and plans behind SEPIA</h1>
+              <p>SEPIA (Software Engineering Prompts In Articles) collects the prompts that software engineering researchers
+                report in their papers, so that they can be found, compared and reused.</p>
+              <dl class="a-stats">
+                <div><dt>Prompts</dt><dd data-stat="prompts">–</dd></div>
+                <div><dt>Papers</dt><dd data-stat="papers">–</dd></div>
+                <div><dt>Task types</dt><dd data-stat="types">–</dd></div>
+                <div><dt>Years</dt><dd data-stat="years">–</dd></div>
+              </dl>
+            </div>
+            <img class="a-hero-art" src="logo-ink.svg" alt="" width="240" height="160">
+          </header>
+
+          <section class="a-sec" aria-labelledby="a-team">
+            <div class="a-head"><span class="a-num">01</span><h2 id="a-team">Team</h2></div>
+            <ul class="team">
+              <li class="person">
+                <div class="avatar" aria-hidden="true"><span>AA</span><img src="team/ali-al-kaswan.jpg" alt="" onerror="this.remove()"></div>
+                <div class="p-name">Ali Al-Kaswan</div>
+                <div class="p-org">Delft University of Technology</div>
+                <div class="p-links">
+                  <a href="https://aalkaswan.github.io/" target="_blank" rel="noopener" title="Homepage" aria-label="Ali Al-Kaswan, homepage"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.5V20h12V9.5M10 20v-5h4v5"/></svg></a>
+                  <a href="https://scholar.google.com/citations?user=mtil9QQAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Ali Al-Kaswan, Google Scholar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 12 4.5l9.5 5-9.5 5z"/><path d="M6.5 11.6V16c1.6 1.6 3.4 2.4 5.5 2.4s3.9-.8 5.5-2.4v-4.4M21.5 9.5V15"/></svg></a>
+                  <a href="https://www.linkedin.com/in/aalkaswan" target="_blank" rel="noopener" title="LinkedIn" aria-label="Ali Al-Kaswan, LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.6 10.2v6.6M7.6 7.3v.1M11.4 16.8v-3.9c0-1.6 1.1-2.7 2.5-2.7s2.4 1 2.4 2.7v3.9M11.4 10.2v6.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+                </div>
+              </li>
+              <li class="person">
+                <div class="avatar" aria-hidden="true"><span>RP</span><img src="team/razvan-mihai-popescu.jpg" alt="" onerror="this.remove()"></div>
+                <div class="p-name">Razvan Mihai Popescu</div>
+                <div class="p-org">Delft University of Technology</div>
+                <div class="p-links">
+                  <a href="https://razvain.github.io/" target="_blank" rel="noopener" title="Homepage" aria-label="Razvan Mihai Popescu, homepage"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.5V20h12V9.5M10 20v-5h4v5"/></svg></a>
+                  <a href="https://scholar.google.com/citations?user=NOQ6ZAkAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Razvan Mihai Popescu, Google Scholar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 12 4.5l9.5 5-9.5 5z"/><path d="M6.5 11.6V16c1.6 1.6 3.4 2.4 5.5 2.4s3.9-.8 5.5-2.4v-4.4M21.5 9.5V15"/></svg></a>
+                  <a href="https://www.linkedin.com/in/razvan-mihai-popescu-b71104211/" target="_blank" rel="noopener" title="LinkedIn" aria-label="Razvan Mihai Popescu, LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.6 10.2v6.6M7.6 7.3v.1M11.4 16.8v-3.9c0-1.6 1.1-2.7 2.5-2.7s2.4 1 2.4 2.7v3.9M11.4 10.2v6.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+                </div>
+              </li>
+              <li class="person">
+                <div class="avatar" aria-hidden="true"><span>AZ</span><img src="team/andy-zaidman.jpg" alt="" onerror="this.remove()"></div>
+                <div class="p-name">Andy Zaidman</div>
+                <div class="p-org">Delft University of Technology</div>
+                <div class="p-links">
+                  <a href="https://azaidman.github.io/" target="_blank" rel="noopener" title="Homepage" aria-label="Andy Zaidman, homepage"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.5V20h12V9.5M10 20v-5h4v5"/></svg></a>
+                  <a href="https://scholar.google.com/citations?user=CDTfcG4AAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Andy Zaidman, Google Scholar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 12 4.5l9.5 5-9.5 5z"/><path d="M6.5 11.6V16c1.6 1.6 3.4 2.4 5.5 2.4s3.9-.8 5.5-2.4v-4.4M21.5 9.5V15"/></svg></a>
+                  <a href="https://www.linkedin.com/in/andyzaidman/" target="_blank" rel="noopener" title="LinkedIn" aria-label="Andy Zaidman, LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.6 10.2v6.6M7.6 7.3v.1M11.4 16.8v-3.9c0-1.6 1.1-2.7 2.5-2.7s2.4 1 2.4 2.7v3.9M11.4 10.2v6.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+                </div>
+              </li>
+              <li class="person">
+                <div class="avatar" aria-hidden="true"><span>MI</span><img src="team/maliheh-izadi.jpg" alt="" onerror="this.remove()"></div>
+                <div class="p-name">Maliheh Izadi</div>
+                <div class="p-org">Delft University of Technology</div>
+                <div class="p-links">
+                  <a href="https://malihehizadi.github.io/" target="_blank" rel="noopener" title="Homepage" aria-label="Maliheh Izadi, homepage"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.5V20h12V9.5M10 20v-5h4v5"/></svg></a>
+                  <a href="https://scholar.google.com/citations?user=F2D5RawAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Maliheh Izadi, Google Scholar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 12 4.5l9.5 5-9.5 5z"/><path d="M6.5 11.6V16c1.6 1.6 3.4 2.4 5.5 2.4s3.9-.8 5.5-2.4v-4.4M21.5 9.5V15"/></svg></a>
+                  <a href="https://www.linkedin.com/in/maliheh-izadi" target="_blank" rel="noopener" title="LinkedIn" aria-label="Maliheh Izadi, LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.6 10.2v6.6M7.6 7.3v.1M11.4 16.8v-3.9c0-1.6 1.1-2.7 2.5-2.7s2.4 1 2.4 2.7v3.9M11.4 10.2v6.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="a-sec" aria-labelledby="a-platforms">
+            <div class="a-head"><span class="a-num">02</span><h2 id="a-platforms">Where to find SEPIA</h2></div>
+            <ul class="platforms">
+              <li class="plat">
+                <div class="plat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></svg></div>
+                <div class="plat-body"><div class="plat-top"><strong>Dataset on Zenodo</strong><span class="status ok">Available</span></div>
+                  <p>The prompts, paper records, task types and all human annotations, with the mining pipeline.</p>
+                  <a href="https://doi.org/10.5281/zenodo.24094112" target="_blank" rel="noopener">Open On Zenodo <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><div class="doi">DOI 10.5281/zenodo.24094112</div></div>
+              </li>
+              <li class="plat">
+                <div class="plat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 14.2c.9 1.3 2 2 3.4 2s2.5-.7 3.4-2"/><path d="M9 9.8v.4M15 9.8v.4"/></svg></div>
+                <div class="plat-body"><div class="plat-top"><strong>Hugging Face</strong><span class="status ok">Available</span></div>
+                  <p>The dataset as a ready-to-load Hugging Face dataset.</p>
+                  <a href="https://huggingface.co/datasets/aalkaswan/sepia" target="_blank" rel="noopener">Open On Hugging Face <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><div class="doi">huggingface.co/datasets/aalkaswan/sepia</div></div>
+              </li>
+              <li class="plat">
+                <div class="plat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></div>
+                <div class="plat-body"><div class="plat-top"><strong>Code on GitHub</strong><span class="status soon">Coming soon</span></div>
+                  <p>The mining pipeline, the clustering and this explorer, as an open repository.</p></div>
+              </li>
+              <li class="plat">
+                <div class="plat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></div>
+                <div class="plat-body"><div class="plat-top"><strong>Paper</strong><span class="status soon">Coming soon</span></div>
+                  <p>How we built the dataset, how well the detector works, and what the prompts show about SE research.</p></div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="a-sec" aria-labelledby="a-roadmap">
+            <div class="a-head"><span class="a-num">03</span><h2 id="a-roadmap">What we plan next</h2></div>
+            <div class="plan-groups">
+              <div class="pg">
+                <div class="pg-head"><span class="pg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 3 8.2l9 4.7 9-4.7z"/><path d="M3 12.4l9 4.7 9-4.7"/><path d="M3 16.4l9 4.7 9-4.7"/></svg></span><div><strong>Wider Coverage</strong><span>More of the prompts that SE research reports</span></div></div>
+                <ul>
+                  <li><span class="pg-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5H7.5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V8z"/><path d="M14 3.5V8h4.5"/><path d="M9 13h6M9 16.5h4"/></svg></span><div><strong>PDF-only papers</strong><p>Extract prompts from the cs.SE papers that are on arXiv only as PDF.</p></div></li>
+                  <li><span class="pg-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5h17"/><path d="M5.5 20.5v-9M10 20.5v-9M14 20.5v-9M18.5 20.5v-9"/><path d="M3.5 11.5 12 5l8.5 6.5z"/></svg></span><div><strong>SE venues beyond arXiv</strong><p>Cover papers from software engineering venues that are not posted on arXiv.</p></div></li>
+                  <li><span class="pg-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="9" cy="9.5" r="1.6"/><path d="m20.5 15.5-4.5-4.5-8.5 8.5"/></svg></span><div><strong>Images and replication packages</strong><p>Capture the prompts that papers show only as figures or keep in their artifacts.</p></div></li>
+                </ul>
+              </div>
+              <div class="pg">
+                <div class="pg-head"><span class="pg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 4.5h6.6l8.4 8.4a1.4 1.4 0 0 1 0 2l-4.6 4.6a1.4 1.4 0 0 1-2 0L3.5 11.1z"/><circle cx="7.6" cy="8.6" r="1.3"/><path d="M13.6 4.5h1.5l6.4 6.4a1.4 1.4 0 0 1 0 2l-3.3 3.3"/></svg></span><div><strong>Richer Labels</strong><span>A clearer picture of every prompt</span></div></div>
+                <ul>
+                  <li><span class="pg-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 19.5 10-10"/><path d="m13 6.5 1.5 1.5"/><path d="M17.5 3.5v3M16 5h3"/><path d="M19.5 10v2.4M18.3 11.2h2.4"/><path d="M9 4v2M8 5h2"/></svg></span><div><strong>Prompting techniques</strong><p>Annotate the techniques the prompts use, such as few-shot examples or chain-of-thought instructions.</p></div></li>
+                  <li><span class="pg-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7.5" r="3.2"/><circle cx="17" cy="7.5" r="3.2"/><circle cx="12" cy="16.5" r="3.2"/></svg></span><div><strong>Better clustering</strong><p>Improve how prompts are grouped into task types, so that fewer of them stay unassigned.</p></div></li>
+                  <li><span class="pg-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 4.5h6.6l8.4 8.4a1.4 1.4 0 0 1 0 2l-4.6 4.6a1.4 1.4 0 0 1-2 0L3.5 11.1z"/><path d="m7.5 11 2.2 2.2 3.8-3.8"/></svg></span><div><strong>More typed prompts</strong><p>Validate the suggested task types for unassigned prompts and fold the reliable ones into the labels.</p></div></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="a-sec" aria-labelledby="a-contact">
+            <div class="a-head"><span class="a-num">04</span><h2 id="a-contact">Contact</h2></div>
+            <div class="contact">
+              <div class="contact-text">
+                <p>Questions about the dataset, a prompt we missed, a task type that looks wrong, or an idea for a collaboration?
+                  Write to us.</p>
+                <ul class="contact-mails"><li><span>Ali Al-Kaswan</span><a href="mailto:a.al-kaswan@tudelft.nl">a.al-kaswan@tudelft.nl</a></li><li><span>Razvan Mihai Popescu</span><a href="mailto:r.m.popescu@tudelft.nl">r.m.popescu@tudelft.nl</a></li></ul>
+                <a class="primary cta" href="mailto:a.al-kaswan@tudelft.nl,r.m.popescu@tudelft.nl?subject=SEPIA"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg>Email Us</a>
+                <p class="muted">Delft University of Technology · Delft, The Netherlands</p>
+              </div>
+              <div class="contact-org" title="Delft University of Technology">
+                <img class="org-logo on-light" src="brand/tudelft-color.svg" alt="TU Delft" width="132" height="54">
+                <img class="org-logo on-dark" src="brand/tudelft-white.svg" alt="TU Delft" width="132" height="54">
+              </div>
+            </div>
+          </section>
+
+          <footer class="a-foot">
+            <img src="logo.svg" alt="" width="34" height="21">
+            <span>SEPIA · Software Engineering Prompts in Articles</span>
+            <span class="a-credit">Explorer by <a href="https://razvain.github.io/" target="_blank" rel="noopener">Razvan Mihai Popescu</a></span>
+          </footer>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Prompt detail drawer, shared by both tabs -->
+  <aside id="detail" class="detail" hidden aria-live="polite">
+    <button class="close" id="detail-close" aria-label="Close">×</button>
+    <div id="detail-body"></div>
+  </aside>
+  <div id="tooltip" class="tooltip" hidden></div>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="app.js?v=20261110184413"></script>
+</body>
+</html>

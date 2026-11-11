@@ -11,8 +11,10 @@ This package releases 8,799 LLM prompts mined from the LaTeX sources of
 | `papers.csv` | one record per paper with prompts: arXiv metadata and the version mined |
 | `searched_papers.csv` | every searched paper with its number of prompts (the denominators) |
 | `task_types.csv` | SE activity → task type → cluster, with prompt and paper counts |
+| `prompt_embeddings_part1.npy`, `prompt_embeddings_part2.npy`, `prompt_embeddings_ids.csv` | the Harrier-OSS-v1-0.6B embedding of every prompt, as clustered (see "Explorer" below) |
 | `annotations/` | all human labels (gold standard, screening, validation) |
 | `code/` | the pipeline, its container, its configuration, and `reextract.py` |
+| `explorer/` | the SEPIA explorer: an interactive cluster map and prompt search (see "Explorer" below) |
 
 ## Prompt records (`prompts.jsonl`)
 
@@ -144,6 +146,8 @@ only the papers whose download failed.
 
 arXiv metadata is CC0. Our annotations, task types and other data are released under
 CC BY 4.0, and the code under the Apache License 2.0. Full texts and PDFs are not included.
+The prompt embeddings (`prompt_embeddings_*.npy`) cover all 8,799 prompts, including the 2,921
+whose text is not released; they are vectors computed from the text and do not contain it.
 
 ## Annotations (`annotations/`)
 
@@ -180,3 +184,26 @@ The code runs in one container (`code/docker/cluster.Dockerfile`); nothing else 
    the paper.
 
 Rebuilding the clusters needs every prompt's text: run `reextract.py` first.
+
+## Explorer (`explorer/`)
+
+The SEPIA explorer is a small web app over the dataset: a cluster map of every prompt (a 2D UMAP
+projection of its embedding), semantic and keyword prompt search, nearest neighbours of a prompt,
+and suggested task types for unassigned prompts. Semantic search embeds the query exactly as the
+pipeline embedded the prompts (Harrier-OSS-v1-0.6B at the pinned revision, same instruction), and,
+like the release, the app serves prompt text only where `text_released` is true. It is also what
+the Hugging Face Space runs (`explorer/Dockerfile`); `explorer/README.md` describes how to run it.
+
+Its data bundle (`explorer/data/`) is built from the release:
+
+```
+pip install umap-learn
+python explorer/build_data.py --prompts prompts.jsonl --papers papers.csv \
+    --emb prompt_embeddings_part1.npy prompt_embeddings_part2.npy --ids prompt_embeddings_ids.csv
+```
+
+The embeddings are float32, 1,024 dimensions, normalised to unit length, split in two parts of
+4,400 and 4,399 rows. Row `row` of `prompt_embeddings_ids.csv` gives the `prompt_id` of each
+embedding, in the order of `prompts.jsonl`. They are the vectors `task_clusters.py` computed and
+clustered (the rows of `code/data/clusters/embeddings.npy` and `added_embeddings.npy` that belong
+to prompts), so they cover every prompt, including those whose text is not released.
